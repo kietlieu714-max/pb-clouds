@@ -80,7 +80,7 @@
     
     <!-- Hero -->
     <div class="hero">
-      <h1>Pickleball in the Clouds</h1>
+      <h1>PICKLEBALL IN THE CLOUDS</h1>
       <p>Fastest growing sport on the planet 🎾</p>
     </div>
 
@@ -161,18 +161,7 @@
       </div>
     </div>
 
-    <!-- How it works -->
-    <div class="section">
-      <h2>How it works</h2>
-      <div class="info-box">
-        <ol>
-          <li>Fill out the form below</li>
-          <li>I'll add you to WhatsApp (announcements only)</li>
-          <li>I'll message you when the May 16 session is confirmed</li>
-          <li>Show up, pay 20 soles, play</li>
-        </ol>
-      </div>
-    </div>
+
 
     <!-- Form -->
     <div class="form-section">
@@ -191,7 +180,7 @@
 
         <!-- MAY 16 LOCK IN -->
         <div class="may16-box">
-          <label class="field-label">🎾 May 16 session at Huycho park — Are you in?</label>
+          <label class="field-label">🎾 May 16 Intro Play in Huycho — Are you in?</label>
           <div class="radio-group">
             <label><input type="radio" name="may16" value="yes" required> Yes, I'm coming!</label>
             <label><input type="radio" name="may16" value="maybe"> Maybe — interested but not sure yet</label>
@@ -280,21 +269,13 @@
           </div>
         </div>
 
-        <div>
-          <label class="field-label">Would you like food during play?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="food" value="appetizers"> Appetizers (tequenos, skewers)</label>
-            <label><input type="radio" name="food" value="lunch"> Lunch</label>
-            <label><input type="radio" name="food" value="snack"> Snack</label>
-            <label><input type="radio" name="food" value="drinks"> Drinks only</label>
-            <label><input type="radio" name="food" value="none"> Not interested</label>
-          </div>
-        </div>
+
 
         <button type="submit">I'm interested →</button>
       </form>
       <div class="success-msg" id="successMsg">
-        ✓ Thanks! I'll add you to WhatsApp soon.
+        <p style="margin-bottom: 0.75rem;">✓ Thanks! Message me on WhatsApp to confirm your spot.</p>
+        <a href="https://wa.me/17144785438" style="color: #1D9E75; text-decoration: none; font-weight: 700;">Open WhatsApp →</a>
       </div>
     </div>
 
@@ -312,7 +293,7 @@
         </div>
         <div class="coming-card">
           <p>Food & drinks</p>
-          <p>Banh mi, tequenos, treats</p>
+          <p>Snacks, lunch, meals</p>
         </div>
       </div>
     </div>
@@ -324,27 +305,53 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
-    document.getElementById('intakeForm').addEventListener('submit', function(e) {
+    const SUPABASE_URL = 'https://zmpzumykgmugrgepaoef.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InptcHp1bXlrZ211Z3JnZXBhb2VmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg1OTk3ODgsImV4cCI6MjA5NDE3NTc4OH0.UpvPE9oIu4geRSVLfSyyOePLtvSBX6nGDHhuAcSVMrk';
+    const { createClient } = window.supabase;
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    document.getElementById('intakeForm').addEventListener('submit', async function(e) {
       e.preventDefault();
+      
+      const whatsappNumber = document.getElementById('whatsapp').value;
+      const last4Digits = whatsappNumber.slice(-4);
+      
       const formData = {
-        timestamp: new Date().toISOString(),
         name: document.getElementById('name').value,
-        whatsapp: document.getElementById('whatsapp').value,
+        whatsapp: whatsappNumber,
+        lookup_code: last4Digits,
         may16: document.querySelector('input[name="may16"]:checked').value,
         pickleball: document.querySelector('input[name="pickleball"]:checked').value,
-        racquet_sports: Array.from(document.querySelectorAll('input[name="racquet"]:checked')).map(cb => cb.value),
+        racquet_sports: Array.from(document.querySelectorAll('input[name="racquet"]:checked')).map(cb => cb.value).join(','),
         racquet_other: document.getElementById('racquet_other').value,
-        activities: Array.from(document.querySelectorAll('input[name="activities"]:checked')).map(cb => cb.value),
+        activities: Array.from(document.querySelectorAll('input[name="activities"]:checked')).map(cb => cb.value).join(','),
         activities_other: document.getElementById('activities_other').value,
-        times_7_10: Array.from(document.querySelectorAll('input[name="times_7_10"]:checked')).map(cb => cb.value),
-        times_10_1: Array.from(document.querySelectorAll('input[name="times_10_1"]:checked')).map(cb => cb.value),
-        times_2_5: Array.from(document.querySelectorAll('input[name="times_2_5"]:checked')).map(cb => cb.value),
-        food_preference: document.querySelector('input[name="food"]:checked').value
+        times_7_10: Array.from(document.querySelectorAll('input[name="times_7_10"]:checked')).map(cb => cb.value).join(','),
+        times_10_1: Array.from(document.querySelectorAll('input[name="times_10_1"]:checked')).map(cb => cb.value).join(','),
+        times_2_5: Array.from(document.querySelectorAll('input[name="times_2_5"]:checked')).map(cb => cb.value).join(',')
       };
-      console.log(formData);
-      document.getElementById('intakeForm').style.display = 'none';
-      document.getElementById('successMsg').style.display = 'block';
+
+      try {
+        const { data, error } = await supabase
+          .from('pickleball_signups')
+          .insert([formData]);
+
+        if (error) throw error;
+
+        document.getElementById('intakeForm').style.display = 'none';
+        const successMsg = document.getElementById('successMsg');
+        successMsg.innerHTML = `
+          <p style="margin-bottom: 0.75rem;">✓ Thanks! Your lookup code is: <strong>${last4Digits}</strong></p>
+          <p style="margin-bottom: 0.75rem; font-size: 12px; color: #b8e6d5;">Message me on WhatsApp to confirm your spot.</p>
+          <a href="https://wa.me/17144785438" style="color: #1D9E75; text-decoration: none; font-weight: 700;">Open WhatsApp →</a>
+        `;
+        successMsg.style.display = 'block';
+      } catch (error) {
+        console.error('Error:', error);
+        alert('There was an error saving your signup. Please try again.');
+      }
     });
   </script>
 </body>
