@@ -77,7 +77,7 @@
     .day-buttons label { display: flex; align-items: center; gap: 5px; font-size: 14px; }
     button[type="submit"] { padding: 12px 16px; background: #1D9E75; color: white; border: none; border-radius: 6px; font-weight: 700; cursor: pointer; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 0.5rem; }
     button[type="submit"]:hover { background: #0f8659; }
-    .success-msg { display: none; padding: 12px; background: rgba(29, 158, 117, 0.25); border: 1px solid #1D9E75; border-radius: 6px; font-size: 15px; text-align: center; margin-top: 1rem; color: #1D9E75; font-weight: 600; }
+    .success-msg { display: none; padding: 20px; background: #1D9E75; border: 2px solid #0f8659; border-radius: 8px; font-size: 16px; text-align: center; margin-top: 1.5rem; color: white; font-weight: 600; box-shadow: 0 4px 12px rgba(29, 158, 117, 0.3); }
     .footer { padding: 2rem 1.5rem; border-top: 2px solid #1D9E75; background: linear-gradient(135deg, #0f1438 0%, #0a0e27 100%); text-align: center; }
     .footer p { margin: 0; font-size: 14px; color: #1D9E75; font-weight: 600; letter-spacing: 0.5px; }
     .footer .tagline-footer { font-size: 16px; color: #b8e6d5; margin-top: 0.75rem; font-style: italic; font-weight: 600; }
@@ -195,6 +195,7 @@
             <label><input type="radio" name="may16" value="yes" required> Yes, I'm coming!</label>
             <label><input type="radio" name="may16" value="maybe"> Maybe — interested but not sure yet</label>
             <label><input type="radio" name="may16" value="no"> No, but interested in future games</label>
+            <label><input type="radio" name="may16" value="watch"> No, but I want to come watch</label>
           </div>
         </div>
 
@@ -358,11 +359,36 @@
 
           document.getElementById('intakeForm').style.display = 'none';
           const successMsg = document.getElementById('successMsg');
-          successMsg.innerHTML = `
-            <p style="margin-bottom: 0.75rem;">✓ Thanks for signing up!</p>
-            <p style="margin-bottom: 0.75rem; font-size: 12px; color: #b8e6d5;">Message me on WhatsApp to confirm your spot.</p>
-            <a href="https://wa.me/17144785438" target="_blank" style="color: #1D9E75; text-decoration: none; font-weight: 700;">Open WhatsApp →</a>
-          `;
+          const may16Answer = document.querySelector('input[name="may16"]:checked').value;
+          
+          let messageContent = '';
+          if (may16Answer === 'yes') {
+            messageContent = `
+              <p style="margin: 0 0 0.75rem 0; font-size: 18px;">✓ See you on Saturday!</p>
+              <p style="margin: 0 0 1rem 0; font-size: 14px; opacity: 0.9;">May 16 at Huycho Bridge Courtyard. Let me know if you have any questions!</p>
+              <a href="https://wa.me/17144785438" target="_blank" style="display: inline-block; background: white; color: #1D9E75; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px;">Message me on WhatsApp</a>
+            `;
+          } else if (may16Answer === 'maybe') {
+            messageContent = `
+              <p style="margin: 0 0 0.75rem 0; font-size: 18px;">✓ Thanks for signing up!</p>
+              <p style="margin: 0 0 1rem 0; font-size: 14px; opacity: 0.9;">Let me know if you change your mind. You're always welcome to come watch!</p>
+              <a href="https://wa.me/17144785438" target="_blank" style="display: inline-block; background: white; color: #1D9E75; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px;">Message me on WhatsApp</a>
+            `;
+          } else if (may16Answer === 'watch') {
+            messageContent = `
+              <p style="margin: 0 0 0.75rem 0; font-size: 18px;">✓ Come watch!</p>
+              <p style="margin: 0 0 1rem 0; font-size: 14px; opacity: 0.9;">May 16 at Huycho Bridge Courtyard. We'd love to have you come see the action!</p>
+              <a href="https://wa.me/17144785438" target="_blank" style="display: inline-block; background: white; color: #1D9E75; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px;">Message me on WhatsApp</a>
+            `;
+          } else {
+            messageContent = `
+              <p style="margin: 0 0 0.75rem 0; font-size: 18px;">✓ Thanks for signing up!</p>
+              <p style="margin: 0 0 1rem 0; font-size: 14px; opacity: 0.9;">Let me know if you change your mind about future games!</p>
+              <a href="https://wa.me/17144785438" target="_blank" style="display: inline-block; background: white; color: #1D9E75; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px;">Message me on WhatsApp</a>
+            `;
+          }
+          
+          successMsg.innerHTML = messageContent;
           successMsg.style.display = 'block';
         } catch (error) {
           console.error('Error:', error);
