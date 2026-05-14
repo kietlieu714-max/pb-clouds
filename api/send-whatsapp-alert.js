@@ -33,6 +33,9 @@ export default async function handler(req, res) {
     let message = '🎾 New signup!\n\n';
     message += `Name: ${formData.name || 'N/A'}\n`;
     message += `WhatsApp: ${formData.whatsapp || 'N/A'}\n`;
+    if (formData.email) {
+      message += `Email: ${formData.email}\n`;
+    }
     message += `May 16: ${formData.may16 || 'N/A'}\n`;
     message += `Pickleball: ${formData.pickleball || 'N/A'}\n`;
     
