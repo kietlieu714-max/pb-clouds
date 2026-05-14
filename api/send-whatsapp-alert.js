@@ -21,17 +21,17 @@ export default async function handler(req, res) {
     message += `May 16: ${formData.may16 || 'N/A'}\n`;
     message += `Pickleball: ${formData.pickleball || 'N/A'}\n`;
     
-    if (formData.racquet && formData.racquet.length > 0) {
-      message += `Racquet sports: ${formData.racquet.join(', ')}\n`;
+    if (formData.racquet_sports) {
+      message += `Racquet sports: ${formData.racquet_sports}\n`;
     }
-    if (formData.activities && formData.activities.length > 0) {
-      message += `Other activities: ${formData.activities.join(', ')}\n`;
+    if (formData.activities) {
+      message += `Other activities: ${formData.activities}\n`;
     }
     if (formData.racquet_other) {
       message += `Other racquet: ${formData.racquet_other}\n`;
     }
     if (formData.activities_other) {
-      message += `Other activities: ${formData.activities_other}\n`;
+      message += `Other activities note: ${formData.activities_other}\n`;
     }
     if (formData.comments) {
       message += `\nComments: ${formData.comments}\n`;
