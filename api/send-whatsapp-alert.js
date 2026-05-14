@@ -6,15 +6,33 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, whatsapp, may16, pickleball } = req.body;
+  const formData = req.body;
 
   try {
     const accountSid = process.env.TWILIO_ACCOUNT_SID;
     const authToken = process.env.TWILIO_AUTH_TOKEN;
-    const fromNumber = process.env.TWILIO_WHATSAPP_NUMBER; // +1 415 523 886
-    const toNumber = '+17144785438'; // YOUR personal WhatsApp number
+    const fromNumber = process.env.TWILIO_WHATSAPP_NUMBER;
+    const toNumber = '+17147349834'; // YOUR personal WhatsApp number
 
-    const message = `🎾 New signup!\n\nName: ${name}\nWhatsApp: ${whatsapp}\nMay 16: ${may16}\nPickleball: ${pickleball}`;
+    // Format the message with all form data
+    let message = '🎾 New signup!\n\n';
+    message += `Name: ${formData.name || 'N/A'}\n`;
+    message += `WhatsApp: ${formData.whatsapp || 'N/A'}\n`;
+    message += `May 16: ${formData.may16 || 'N/A'}\n`;
+    message += `Pickleball: ${formData.pickleball || 'N/A'}\n`;
+    
+    if (formData.racquet && formData.racquet.length > 0) {
+      message += `Racquet sports: ${formData.racquet.join(', ')}\n`;
+    }
+    if (formData.activities && formData.activities.length > 0) {
+      message += `Other activities: ${formData.activities.join(', ')}\n`;
+    }
+    if (formData.racquet_other) {
+      message += `Other racquet: ${formData.racquet_other}\n`;
+    }
+    if (formData.activities_other) {
+      message += `Other activities: ${formData.activities_other}\n`;
+    }
 
     const auth = Buffer.from(`${accountSid}:${authToken}`).toString('base64');
 
