@@ -14,7 +14,22 @@ export default async function handler(req, res) {
     const fromNumber = process.env.TWILIO_WHATSAPP_NUMBER;
     const toNumber = '+17144785438'; // YOUR personal WhatsApp number
 
-    // Format the message with all form data
+    // Create personalized message based on May 16 answer
+    let personalMessage = '';
+    if (formData.may16 === 'yes') {
+      personalMessage = `Thanks for signing up for pickleball games!%0A%0ASee you Saturday, May 16 at 9 AM in Huycho 🎾%0A%0AWear active attire & shoes with traction. Hat or sunglasses optional for the sun.%0A%0Ahttps://maps.app.goo.gl/XenVbs4pXU3EpahH6%0A%0AWant to join our WhatsApp group for schedules & updates? Let me know!`;
+    } else if (formData.may16 === 'maybe') {
+      personalMessage = `Thanks for signing up for pickleball games!%0A%0AIf you happen to be free, you're always welcome. Just let me know in advance 🎾%0A%0AWant to join our WhatsApp group for schedules & updates? Let me know!`;
+    } else if (formData.may16 === 'watch') {
+      personalMessage = `Thanks for signing up for pickleball games!%0A%0ACome watch us play on May 16 at 9 AM in Huycho 🎾%0A%0AJust let me know in advance.%0A%0Ahttps://maps.app.goo.gl/XenVbs4pXU3EpahH6%0A%0AWant to join our WhatsApp group for schedules & updates? Let me know!`;
+    } else {
+      personalMessage = `Thanks for signing up for pickleball games!%0A%0AIf you happen to be free, you're always welcome to watch us play. Just let me know in advance 🎾%0A%0AWant to join our WhatsApp group for schedules & updates? Let me know!`;
+    }
+
+    // Create clickable WhatsApp link for you to message them
+    const whatsappLink = `https://wa.me/${formData.whatsapp.replace(/[^0-9]/g, '')}?text=${personalMessage}`;
+
+    // Format the alert message with all form data
     let message = '🎾 New signup!\n\n';
     message += `Name: ${formData.name || 'N/A'}\n`;
     message += `WhatsApp: ${formData.whatsapp || 'N/A'}\n`;
@@ -36,6 +51,8 @@ export default async function handler(req, res) {
     if (formData.comments) {
       message += `\nComments: ${formData.comments}\n`;
     }
+    
+    message += `\n👉 Reply: ${whatsappLink}`;
 
     const auth = Buffer.from(`${accountSid}:${authToken}`).toString('base64');
 
