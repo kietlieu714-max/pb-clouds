@@ -331,12 +331,7 @@
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({
-            name: formData.name,
-            whatsapp: formData.whatsapp,
-            may16: formData.may16,
-            pickleball: formData.pickleball
-          })
+          body: JSON.stringify(formData)
         });
         
         if (response.ok) {
