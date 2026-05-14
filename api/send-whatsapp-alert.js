@@ -12,7 +12,7 @@ export default async function handler(req, res) {
     const accountSid = process.env.TWILIO_ACCOUNT_SID;
     const authToken = process.env.TWILIO_AUTH_TOKEN;
     const fromNumber = process.env.TWILIO_WHATSAPP_NUMBER;
-    const toNumber = '+17147349834'; // YOUR personal WhatsApp number
+    const toNumber = '+17144785438'; // YOUR personal WhatsApp number
 
     // Format the message with all form data
     let message = '🎾 New signup!\n\n';
