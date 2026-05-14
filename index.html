@@ -103,12 +103,12 @@
     <div class="section">
       <h2>What is pickleball?</h2>
       <div class="info-box">
-        Combines the fun of tennis, ping pong, badminton, and paddle sports. Played on a smaller court that's easy on your body. You'll learn the basics in minutes, have a blast with friends old and new, and stay active while laughing the whole time. Perfect for all ages and fitness levels.
+        Combines the fun of tennis, ping pong, and paddle sports. Played on a smaller court that's easy on your body. You'll learn the basics in minutes, have a blast with friends old and new, and stay active while laughing the whole time. Perfect for all ages and fitness levels.
       </div>
       <div class="grid-2">
         <div class="card">
-          <p>Equipment</p>
-          <p>Nets, paddles & balls</p>
+          <p>All equipment included</p>
+          <p>Standard nets, carbon fiber paddles, Joola balls</p>
         </div>
         <div class="card">
           <p>Level</p>
@@ -117,9 +117,9 @@
       </div>
     </div>
 
-    <!-- Here's what you get -->
+    <!-- What we provide -->
     <div class="section section-alt">
-      <h2>Here's what you get</h2>
+      <h2>What we provide</h2>
       
       <div class="value-grid">
         <!-- Net Column -->
@@ -322,6 +322,30 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
+    // Send WhatsApp alert to you via Vercel API
+    const sendWhatsAppAlert = async (formData) => {
+      try {
+        const response = await fetch('/api/send-whatsapp-alert', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            whatsapp: formData.whatsapp,
+            may16: formData.may16,
+            pickleball: formData.pickleball
+          })
+        });
+        
+        if (response.ok) {
+          console.log('WhatsApp alert sent');
+        }
+      } catch (err) {
+        console.log('Alert service ready when deployed');
+      }
+    };
+
     // Wait for Supabase library to load
     const initForm = async () => {
       const SUPABASE_URL = 'https://zmpzumykgmugrgepaoef.supabase.co';
@@ -364,32 +388,42 @@
           let messageContent = '';
           if (may16Answer === 'yes') {
             messageContent = `
-              <p style="margin: 0 0 0.75rem 0; font-size: 18px;">✓ See you on Saturday!</p>
-              <p style="margin: 0 0 1rem 0; font-size: 14px; opacity: 0.9;">May 16 at Huycho Bridge Courtyard. Let me know if you have any questions!</p>
-              <a href="https://wa.me/17144785438" target="_blank" style="display: inline-block; background: white; color: #1D9E75; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px;">Message me on WhatsApp</a>
+              <p style="margin: 0 0 0.75rem 0; font-size: 18px;">✓ You're registered!</p>
+              <p style="margin: 0 0 1rem 0; font-size: 14px; opacity: 0.9;">🎾 All equipment included<br>📍 Saturday, May 16 • 9-11 AM</p>
+              <a href="https://maps.app.goo.gl/XenVbs4pXU3EpahH6" target="_blank" style="display: inline-block; background: white; color: #1D9E75; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px; margin-right: 8px;">View location</a>
+              <a href="https://wa.me/17144785438" target="_blank" style="display: inline-block; background: white; color: #1D9E75; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px;">Questions?</a>
             `;
           } else if (may16Answer === 'maybe') {
             messageContent = `
               <p style="margin: 0 0 0.75rem 0; font-size: 18px;">✓ Thanks for signing up!</p>
-              <p style="margin: 0 0 1rem 0; font-size: 14px; opacity: 0.9;">Let me know if you change your mind. You're always welcome to come watch!</p>
-              <a href="https://wa.me/17144785438" target="_blank" style="display: inline-block; background: white; color: #1D9E75; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px;">Message me on WhatsApp</a>
+              <p style="margin: 0 0 1rem 0; font-size: 14px; opacity: 0.9;">Let me know if you change your mind. You're always welcome!</p>
+              <a href="https://maps.app.goo.gl/XenVbs4pXU3EpahH6" target="_blank" style="display: inline-block; background: white; color: #1D9E75; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px; margin-right: 8px;">View location</a>
+              <a href="https://wa.me/17144785438" target="_blank" style="display: inline-block; background: white; color: #1D9E75; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px;">Message me</a>
             `;
           } else if (may16Answer === 'watch') {
             messageContent = `
               <p style="margin: 0 0 0.75rem 0; font-size: 18px;">✓ Come watch!</p>
-              <p style="margin: 0 0 1rem 0; font-size: 14px; opacity: 0.9;">May 16 at Huycho Bridge Courtyard. We'd love to have you come see the action!</p>
-              <a href="https://wa.me/17144785438" target="_blank" style="display: inline-block; background: white; color: #1D9E75; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px;">Message me on WhatsApp</a>
+              <p style="margin: 0 0 1rem 0; font-size: 14px; opacity: 0.9;">May 16 at 9 AM. We'd love to have you!</p>
+              <a href="https://maps.app.goo.gl/XenVbs4pXU3EpahH6" target="_blank" style="display: inline-block; background: white; color: #1D9E75; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px; margin-right: 8px;">View location</a>
+              <a href="https://wa.me/17144785438" target="_blank" style="display: inline-block; background: white; color: #1D9E75; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px;">Message me</a>
             `;
           } else {
             messageContent = `
               <p style="margin: 0 0 0.75rem 0; font-size: 18px;">✓ Thanks for signing up!</p>
               <p style="margin: 0 0 1rem 0; font-size: 14px; opacity: 0.9;">Let me know if you change your mind about future games!</p>
-              <a href="https://wa.me/17144785438" target="_blank" style="display: inline-block; background: white; color: #1D9E75; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px;">Message me on WhatsApp</a>
+              <a href="https://wa.me/17144785438" target="_blank" style="display: inline-block; background: white; color: #1D9E75; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px;">Message me</a>
             `;
           }
           
           successMsg.innerHTML = messageContent;
           successMsg.style.display = 'block';
+          
+          // Send WhatsApp alert to you
+          try {
+            await sendWhatsAppAlert(formData);
+          } catch (alertError) {
+            console.error('WhatsApp alert failed (non-critical):', alertError);
+          }
         } catch (error) {
           console.error('Error:', error);
           alert('There was an error saving your signup. Please try again.');
