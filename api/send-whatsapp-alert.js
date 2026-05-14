@@ -17,13 +17,13 @@ export default async function handler(req, res) {
     // Create personalized message based on May 16 answer
     let personalMessage = '';
     if (formData.may16 === 'yes') {
-      personalMessage = `Thanks for signing up for pickleball games!%0A%0ASee you Saturday, May 16 at 9 AM in Huycho 🎾%0A%0AWear active attire & shoes with traction. Hat or sunglasses optional for the sun.%0A%0Ahttps://maps.app.goo.gl/XenVbs4pXU3EpahH6%0A%0AWant to join our WhatsApp group for schedules & updates? Let me know!`;
+      personalMessage = encodeURIComponent(`Thanks for signing up for pickleball games!\n\nSee you Saturday, May 16 at 9 AM in Huycho 🎾\n\nWear active attire & shoes with traction. Hat or sunglasses optional for the sun.\n\nhttps://maps.app.goo.gl/XenVbs4pXU3EpahH6\n\nWant to join our WhatsApp group for schedules & updates? Let me know!`);
     } else if (formData.may16 === 'maybe') {
-      personalMessage = `Thanks for signing up for pickleball games!%0A%0AIf you happen to be free, you're always welcome. Just let me know in advance 🎾%0A%0AWant to join our WhatsApp group for schedules & updates? Let me know!`;
+      personalMessage = encodeURIComponent(`Thanks for signing up for pickleball games!\n\nIf you happen to be free, you're always welcome. Just let me know in advance 🎾\n\nWant to join our WhatsApp group for schedules & updates? Let me know!`);
     } else if (formData.may16 === 'watch') {
-      personalMessage = `Thanks for signing up for pickleball games!%0A%0ACome watch us play on May 16 at 9 AM in Huycho 🎾%0A%0AJust let me know in advance.%0A%0Ahttps://maps.app.goo.gl/XenVbs4pXU3EpahH6%0A%0AWant to join our WhatsApp group for schedules & updates? Let me know!`;
+      personalMessage = encodeURIComponent(`Thanks for signing up for pickleball games!\n\nCome watch us play on May 16 at 9 AM in Huycho 🎾\n\nJust let me know in advance.\n\nhttps://maps.app.goo.gl/XenVbs4pXU3EpahH6\n\nWant to join our WhatsApp group for schedules & updates? Let me know!`);
     } else {
-      personalMessage = `Thanks for signing up for pickleball games!%0A%0AIf you happen to be free, you're always welcome to watch us play. Just let me know in advance 🎾%0A%0AWant to join our WhatsApp group for schedules & updates? Let me know!`;
+      personalMessage = encodeURIComponent(`Thanks for signing up for pickleball games!\n\nIf you happen to be free, you're always welcome to watch us play. Just let me know in advance 🎾\n\nWant to join our WhatsApp group for schedules & updates? Let me know!`);
     }
 
     // Create clickable WhatsApp link for you to message them
