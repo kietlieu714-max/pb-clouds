@@ -17,13 +17,13 @@ export default async function handler(req, res) {
     // Create personalized message based on May 16 answer
     let personalMessage = '';
     if (formData.may16 === 'yes') {
-      personalMessage = encodeURIComponent(`Thanks for signing up for pickleball games!\n\nSee you Saturday, May 16 at 9 AM in Huycho 🎾\n\nWear active attire & shoes with traction. Hat or sunglasses optional for the sun.\n\nhttps://maps.app.goo.gl/XenVbs4pXU3EpahH6\n\nWant to join our WhatsApp group for schedules & updates? Let me know!`);
+      personalMessage = encodeURIComponent(`Thanks for signing up to play pickleball!\n\nSee you Saturday, May 16 at 9 AM in Huycho 🎾\n\nWear active attire & shoes with traction. Hat or sunglasses optional for the sun.\n\nhttps://maps.app.goo.gl/XenVbs4pXU3EpahH6\n\nWant to join our WhatsApp group for schedules & updates? Let me know!`);
     } else if (formData.may16 === 'maybe') {
-      personalMessage = encodeURIComponent(`Thanks for signing up for pickleball games!\n\nIf you happen to be free, you're always welcome. Just let me know in advance 🎾\n\nWant to join our WhatsApp group for schedules & updates? Let me know!`);
+      personalMessage = encodeURIComponent(`Thanks for signing up to play pickleball!\n\nIf you happen to be free, you're always welcome to watch us play. Just let me know in advance 🎾\n\nhttps://maps.app.goo.gl/XenVbs4pXU3EpahH6\n\nWant to join our WhatsApp group for schedules & updates? Let me know!`);
     } else if (formData.may16 === 'watch') {
-      personalMessage = encodeURIComponent(`Thanks for signing up for pickleball games!\n\nCome watch us play on May 16 at 9 AM in Huycho 🎾\n\nJust let me know in advance.\n\nhttps://maps.app.goo.gl/XenVbs4pXU3EpahH6\n\nWant to join our WhatsApp group for schedules & updates? Let me know!`);
+      personalMessage = encodeURIComponent(`Thanks for signing up to play pickleball!\n\nCome watch us play on May 16 at 9 AM in Huycho 🎾\n\nJust let me know in advance.\n\nhttps://maps.app.goo.gl/XenVbs4pXU3EpahH6\n\nWant to join our WhatsApp group for schedules & updates? Let me know!`);
     } else {
-      personalMessage = encodeURIComponent(`Thanks for signing up for pickleball games!\n\nIf you happen to be free, you're always welcome to watch us play. Just let me know in advance 🎾\n\nWant to join our WhatsApp group for schedules & updates? Let me know!`);
+      personalMessage = encodeURIComponent(`Thanks for signing up to play pickleball!\n\nIf you happen to be free, you're always welcome to watch us play. Just let me know in advance 🎾\n\nhttps://maps.app.goo.gl/XenVbs4pXU3EpahH6\n\nWant to join our WhatsApp group for schedules & updates? Let me know!`);
     }
 
     // Create clickable WhatsApp link for you to message them
