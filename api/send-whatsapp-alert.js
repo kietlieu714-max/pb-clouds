@@ -33,6 +33,9 @@ export default async function handler(req, res) {
     if (formData.activities_other) {
       message += `Other activities: ${formData.activities_other}\n`;
     }
+    if (formData.comments) {
+      message += `\nComments: ${formData.comments}\n`;
+    }
 
     const auth = Buffer.from(`${accountSid}:${authToken}`).toString('base64');
 
