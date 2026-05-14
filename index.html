@@ -370,6 +370,7 @@
           racquet_other: document.getElementById('racquet_other').value,
           activities: Array.from(document.querySelectorAll('input[name="activities"]:checked')).map(cb => cb.value).join(','),
           activities_other: document.getElementById('activities_other').value,
+          comments: document.getElementById('comments').value,
           times_7_10: Array.from(document.querySelectorAll('input[name="times_7_10"]:checked')).map(cb => cb.value).join(','),
           times_10_1: Array.from(document.querySelectorAll('input[name="times_10_1"]:checked')).map(cb => cb.value).join(','),
           times_2_5: Array.from(document.querySelectorAll('input[name="times_2_5"]:checked')).map(cb => cb.value).join(',')
