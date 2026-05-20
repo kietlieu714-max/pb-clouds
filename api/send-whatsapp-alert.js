@@ -17,11 +17,11 @@ export default async function handler(req, res) {
     // Create personalized message based on May 16 answer
     let personalMessage = '';
     if (formData.may16 === 'yes') {
-      personalMessage = encodeURIComponent(`Thanks for signing up to play pickleball!\n\nSee you Saturday, May 16 at 9 AM in Huycho 🎾\n\nWear active attire & shoes with traction. Hat or sunglasses optional for the sun.\n\nhttps://maps.app.goo.gl/XenVbs4pXU3EpahH6\n\nWant to join our WhatsApp group for schedules & updates? Let me know!`);
+      personalMessage = encodeURIComponent(`Thanks for signing up to play pickleball!\n\nSee you this Saturday at 8 AM in Huycho 🎾\n\nBring 20 soles cash. Wear active attire & shoes with traction. Hat or sunglasses optional for the sun.\n\nhttps://maps.app.goo.gl/XenVbs4pXU3EpahH6\n\nWant to join our WhatsApp group for schedules & updates? Let me know!`);
     } else if (formData.may16 === 'watch') {
-      personalMessage = encodeURIComponent(`Thanks for signing up to play pickleball!\n\nCome watch us play on May 16 at 9 AM in Huycho 🎾\n\nJust let me know in advance.\n\nhttps://maps.app.goo.gl/XenVbs4pXU3EpahH6\n\nWant to join our WhatsApp group for schedules & updates? Let me know!`);
+      personalMessage = encodeURIComponent(`Thanks for signing up to play pickleball!\n\nCome watch us play this Saturday at 8 AM in Huycho 🎾\n\nBring 20 soles cash if you want to play. Just let me know in advance.\n\nhttps://maps.app.goo.gl/XenVbs4pXU3EpahH6\n\nWant to join our WhatsApp group for schedules & updates? Let me know!`);
     } else {
-      personalMessage = encodeURIComponent(`Thanks for signing up for pickleball!\n\nI'll definitely reach out about future sessions 🎾\n\nIn the meantime, you're always welcome to come watch us play on May 16 at 9 AM in Huycho.\n\nhttps://maps.app.goo.gl/XenVbs4pXU3EpahH6\n\nWant to join our WhatsApp group for schedules & updates? Let me know!`);
+      personalMessage = encodeURIComponent(`Thanks for signing up for pickleball!\n\nI'll definitely reach out about future sessions 🎾\n\nIn the meantime, you're always welcome to come watch us play this Saturday at 8 AM in Huycho. If you want to jump in and play, it's 20 soles.\n\nhttps://maps.app.goo.gl/XenVbs4pXU3EpahH6\n\nWant to join our WhatsApp group for schedules & updates? Let me know!`);
     }
 
     // Create clickable WhatsApp link for you to message them
