@@ -17,8 +17,8 @@ export default async function handler(req, res) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InptcHp1bXlrZ211Z3JnZXBhb2VmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQxNTkwNzUsImV4cCI6MjA1OTczNTA3NX0.BhBPsVCpXhVXQ8G0_0dA_L0TFiI1p_ghOj5kBXLj8qE',
-          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InptcHp1bXlrZ211Z3JnZXBhb2VmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQxNTkwNzUsImV4cCI6MjA1OTczNTA3NX0.BhBPsVCpXhVXQ8G0_0dA_L0TFiI1p_ghOj5kBXLj8qE',
+          'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InptcHp1bXlrZ211Z3JnZXBhb2VmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg1OTk3ODgsImV4cCI6MjA5NDE3NTc4OH0.UpvPE9oIu4geRSVLfSyyOePLtvSBX6nGDHhuAcSVMrk',
+          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InptcHp1bXlrZ211Z3JnZXBhb2VmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg1OTk3ODgsImV4cCI6MjA5NDE3NTc4OH0.UpvPE9oIu4geRSVLfSyyOePLtvSBX6nGDHhuAcSVMrk',
           'Prefer': 'return=minimal'
         },
         body: JSON.stringify({
