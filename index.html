@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pickleball in the Clouds — Sacred Valley, Peru</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-lang="en">
+
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-brand">
+      Pickleball in the Clouds
+      <small>Sacred Valley · Peru</small>
+    </div>
+  </a>
+  <button class="lang-btn" onclick="toggleLang()" id="langBtn">ES / EN</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="slides-wrap" id="slidesWrap">
+    <div class="slide active" style="background-image:url('images/image-4.png')"></div>
+<div class="slide " style="background-image:url('images/image-1.png')"></div>
+<div class="slide " style="background-image:url('images/image-2.png')"></div>
+<div class="slide " style="background-image:url('images/image-3.png')"></div>
+<div class="slide " style="background-image:url('images/image-5.jpeg')"></div>
+
+  </div>
+
+  <button class="carousel-arrow arrow-prev" onclick="prevSlide()" aria-label="Previous">&#8249;</button>
+  <button class="carousel-arrow arrow-next" onclick="nextSlide()" aria-label="Next">&#8250;</button>
+
+  <div class="hero-text">
+    <a href="#signup" class="btn-hero">
+      <span class="en">I Want to Play →</span>
+      <span class="es">Quiero Jugar →</span>
+    </a>
+    <div class="dots-row" id="dotsWrap"><button class="dot active" onclick="goTo(0)" aria-label="Go to slide 1"></button><button class="dot " onclick="goTo(1)" aria-label="Go to slide 2"></button><button class="dot " onclick="goTo(2)" aria-label="Go to slide 3"></button><button class="dot " onclick="goTo(3)" aria-label="Go to slide 4"></button><button class="dot " onclick="goTo(4)" aria-label="Go to slide 5"></button></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WHAT IS PICKLEBALL -->
+<section class="section" id="what">
+  <span class="section-label en">What is Pickleball?</span>
+  <span class="section-label es">¿Qué es el Pickleball?</span>
+  <h2 class="section-title en">Easy to Learn.<br>Hard to Stop.</h2>
+  <h2 class="section-title es">Fácil de Aprender.<br>Difícil de Parar.</h2>
+  <p class="what-text en">Tennis meets ping pong — on a smaller court, with a paddle and a wiffle ball. Pick it up in minutes and play real points the same day.</p>
+  <p class="what-text es">Tenis con ping pong — en una cancha pequeña, con paleta y pelota. Lo aprendes en minutos y juegas el mismo día.</p>
+  <div class="quick-hits">
+    <div class="qh"><div class="qh-icon">⚡</div><div class="qh-label en">Instantly Fun</div><div class="qh-label es">Al Instante</div></div>
+    <div class="qh"><div class="qh-icon">😂</div><div class="qh-label en">You Will Laugh</div><div class="qh-label es">Te Reirás</div></div>
+    <div class="qh"><div class="qh-icon">🤝</div><div class="qh-label en">Meet People</div><div class="qh-label es">Conoce Gente</div></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SESSIONS -->
+<div class="sessions-bg" id="sessions">
+  <div class="sessions-inner">
+    <span class="section-label en">Sessions</span>
+    <span class="section-label es">Sesiones</span>
+    <h2 class="section-title en">Every Saturday</h2>
+    <h2 class="section-title es">Cada Sábado</h2>
+    <div class="session-card">
+      <div class="session-header">
+        <div class="session-day">SAT</div>
+        <div class="session-when">
+          <span class="session-recurring en">Weekly</span>
+          <span class="session-recurring es">Semanal</span>
+          <div class="session-time">9:00 — 11:00 AM</div>
+          <div class="session-loc">📍 Huycho, Valle Sagrado</div>
+        </div>
+      </div>
+      <div class="session-body">
+        <p class="session-note en">First 30 min: intro to the game — rules, how to play, your first rally. No experience needed.<br><br>Next 90 min: open play. Already know how to play? Show up and play with tips to boost your game.</p>
+        <p class="session-note es">Primeros 30 min: intro al juego — reglas, cómo jugar, tu primer rally. Sin experiencia necesaria.<br><br>Siguientes 90 min: juego libre. ¿Ya sabes jugar? Solo llega y juega con consejos para mejorar tu juego.</p>
+      </div>
+    </div>
+
+    <span class="section-label" style="margin-top:28px;display:block;">
+      <span class="en">What's Included</span>
+      <span class="es">Qué Incluye</span>
+    </span>
+    <ul class="provide-list">
+      <li><span class="check">✓</span><span class="en">Premium paddles from the USA — Joola, Selkirk, Facolas, 6.0, Wilson</span><span class="es">Paletas premium de USA — Joola, Selkirk, Facolas, 6.0, Wilson</span></li>
+      <li><span class="check">✓</span><span class="en">USAP-approved Joola balls — tournament-quality</span><span class="es">Pelotas Joola aprobadas USAP — calidad torneo</span></li>
+      <li><span class="check">✓</span><span class="en">Regulation 22ft portable net — shipped from the USA</span><span class="es">Red portátil de 22ft regulación — enviada desde USA</span></li>
+      <li><span class="check">✓</span><span class="en">Tips to boost your game + coaching insights</span><span class="es">Consejos para mejorar tu juego + insights de coaching</span></li>
+      <li><span class="check">✓</span><span class="en">Community & good vibes</span><span class="es">Comunidad y buen ambiente</span></li>
+    </ul>
+    <div class="price-row">
+      <div><div class="price-label en">Play for</div><div class="price-label es">Juega por</div></div>
+      <div style="text-align:right;">
+        <div class="price-amount">S/ 20</div>
+        <div class="price-sub en">per person · per session</div>
+        <div class="price-sub es">por persona · por sesión</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- FORM -->
+<div class="form-wrap" id="signup">
+  <div class="form-inner">
+    <h2 class="section-title en">I Want to Play</h2>
+    <h2 class="section-title es">Quiero Jugar</h2>
+
+    <div class="form-card" id="formCard">
+      <form id="signupForm" onsubmit="submitForm(event)">
+        <div class="form-group">
+          <label class="form-label en">Your Name *</label>
+          <label class="form-label es">Tu Nombre *</label>
+          <input type="text" class="form-input" id="fname" placeholder="e.g. Maria" autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label class="form-label en">WhatsApp *</label>
+          <label class="form-label es">WhatsApp *</label>
+          <input type="tel" class="form-input" id="fwa" placeholder="+51 999 999 999" autocomplete="tel">
+        </div>
+        <div class="form-group">
+          <label class="form-label en">Email (optional)</label>
+          <label class="form-label es">Email (opcional)</label>
+          <input type="email" class="form-input" id="femail" placeholder="your@email.com" autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label class="form-label en">Experience Level</label>
+          <label class="form-label es">Nivel de Experiencia</label>
+          <div class="exp-grid">
+            <div class="exp-btn" onclick="selectExp(this,'never')"><div>🙋</div><div class="en" style="margin-top:5px;font-size:10px;">Never played</div><div class="es" style="margin-top:5px;font-size:10px;">Nunca jugué</div></div>
+            <div class="exp-btn" onclick="selectExp(this,'a-little')"><div>🏓</div><div class="en" style="margin-top:5px;font-size:10px;">A little</div><div class="es" style="margin-top:5px;font-size:10px;">Un poco</div></div>
+            <div class="exp-btn" onclick="selectExp(this,'can-play')"><div>🔥</div><div class="en" style="margin-top:5px;font-size:10px;">I can play</div><div class="es" style="margin-top:5px;font-size:10px;">Sé jugar</div></div>
+          </div>
+          <input type="hidden" id="fexp" value="">
+        </div>
+        <div class="form-group">
+          <label class="form-label en">Which days are you free?</label>
+          <label class="form-label es">¿Qué días tienes disponibles?</label>
+          <div class="days-grid">
+            <div class="day-btn" onclick="toggleDay(this,'mon')"><span class="en">M</span><span class="es">L</span></div>
+            <div class="day-btn" onclick="toggleDay(this,'tue')"><span class="en">T</span><span class="es">M</span></div>
+            <div class="day-btn" onclick="toggleDay(this,'wed')"><span class="en">W</span><span class="es">X</span></div>
+            <div class="day-btn" onclick="toggleDay(this,'thu')"><span class="en">T</span><span class="es">J</span></div>
+            <div class="day-btn" onclick="toggleDay(this,'fri')"><span class="en">F</span><span class="es">V</span></div>
+            <div class="day-btn" onclick="toggleDay(this,'sat')"><span class="en">S</span><span class="es">S</span></div>
+            <div class="day-btn" onclick="toggleDay(this,'sun')"><span class="en">S</span><span class="es">D</span></div>
+          </div>
+          <input type="hidden" id="fdays" value="">
+        </div>
+        <div class="form-group">
+          <label class="form-label en">Time Preference</label>
+          <label class="form-label es">Horario Preferido</label>
+          <div class="time-grid">
+            <div class="time-btn" onclick="toggleTime(this,'morning')"><span><strong class="en">Morning</strong><strong class="es">Mañana</strong> · 9–11 AM</span><span class="time-check">✓</span></div>
+            <div class="time-btn" onclick="toggleTime(this,'midday')"><span><strong class="en">Midday</strong><strong class="es">Mediodía</strong> · 11 AM–2 PM</span><span class="time-check">✓</span></div>
+            <div class="time-btn" onclick="toggleTime(this,'afternoon')"><span><strong class="en">Afternoon</strong><strong class="es">Tarde</strong> · 2–5 PM</span><span class="time-check">✓</span></div>
+          </div>
+          <input type="hidden" id="ftimes" value="">
+        </div>
+        <button type="submit" class="btn-submit" id="submitBtn">
+          <span class="en">Sign Me Up →</span>
+          <span class="es">¡Regístrame →</span>
+        </button>
+      </form>
+      <div class="success-state" id="successState">
+        <div class="success-icon">🏔️</div>
+        <div class="success-title en">You're In!</div>
+        <div class="success-title es">¡Estás Adentro!</div>
+        <p class="success-sub en">We'll reach out on WhatsApp to confirm.<br>See you on the court in Huycho! 🏓</p>
+        <p class="success-sub es">Te contactaremos por WhatsApp para confirmar.<br>¡Nos vemos en la cancha! 🏓</p>
+      </div>
+    </div>
+    <p class="coaching-nudge en">Interested in private coaching? Ask us on the court.</p>
+    <p class="coaching-nudge es">¿Interesado en clases privadas? Pregúntanos en la cancha.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-name">Pickleball in the Clouds</div>
+  <div class="footer-tag">Huycho · Sacred Valley · Peru</div>
+  <div class="footer-links">
+    <a href="https://wa.me/17144785438" class="footer-link">💬 WhatsApp</a>
+  </div>
+  <p class="footer-copy">© 2025 Pickleball in the Clouds · Sacred Valley, Peru</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
