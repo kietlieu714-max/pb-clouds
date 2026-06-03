@@ -6,6 +6,11 @@ export default async function handler(req, res) {
   try {
     const { name, whatsapp, email, experience, free_days, time_preference } = req.body;
 
+    // Validate required fields
+    if (!name || !whatsapp) {
+      return res.status(400).json({ error: 'Name and WhatsApp are required' });
+    }
+
     const response = await fetch(
       'https://zmpzumykgmugrgepaoef.supabase.co/rest/v1/pickleball_signups',
       {
@@ -17,9 +22,9 @@ export default async function handler(req, res) {
           'Prefer': 'return=minimal'
         },
         body: JSON.stringify({
-          name,
-          whatsapp,
-          email: email || null,
+          name: name.trim(),
+          whatsapp: whatsapp.trim(),
+          email: email ? email.trim() : null,
           experience: experience || null,
           free_days: free_days || null,
           time_preference: time_preference || null
@@ -27,15 +32,16 @@ export default async function handler(req, res) {
       }
     );
 
+    const responseText = await response.text();
+    
     if (!response.ok) {
-      const error = await response.text();
-      console.error('Supabase error:', error);
-      return res.status(response.status).json({ error: 'Failed to save signup' });
+      console.error('Supabase error:', responseText, response.status);
+      return res.status(response.status).json({ error: 'Failed to save signup', details: responseText });
     }
 
     return res.status(201).json({ success: true });
   } catch (error) {
-    console.error('Error:', error);
-    return res.status(500).json({ error: 'Server error' });
+    console.error('Error:', error.message);
+    return res.status(500).json({ error: 'Server error', details: error.message });
   }
 }
