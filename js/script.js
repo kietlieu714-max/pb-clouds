@@ -100,13 +100,10 @@ async function submitForm(e){
   btn.disabled=true;
   btn.innerHTML='<span class="spinner"></span>'+(lang==='en'?'Saving...':'Guardando...');
   try{
-    var res=await fetch('https://zmpzumykgmugrgepaoef.supabase.co/rest/v1/pickleball_signups',{
+    var res=await fetch('/api/signup',{
       method:'POST',
       headers:{
-        'Content-Type':'application/json',
-        'apikey':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InptcHp1bXlrZ211Z3JnZXBhb2VmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQxNTkwNzUsImV4cCI6MjA1OTczNTA3NX0.BhBPsVCpXhVXQ8G0_0dA_L0TFiI1p_ghOj5kBXLj8qE',
-        'Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InptcHp1bXlrZ211Z3JnZXBhb2VmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQxNTkwNzUsImV4cCI6MjA1OTczNTA3NX0.BhBPsVCpXhVXQ8G0_0dA_L0TFiI1p_ghOj5kBXLj8qE',
-        'Prefer':'return=minimal'
+        'Content-Type':'application/json'
       },
       body:JSON.stringify({name:name,whatsapp:whatsapp,email:email,experience:experience,free_days:free_days,time_preference:time_preference})
     });
