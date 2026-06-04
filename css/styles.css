@@ -19,7 +19,7 @@ nav{
 }
 .nav-logo{ display:flex; align-items:center; gap:10px; text-decoration:none; }
 .nav-logo-img{ width:36px; height:36px; border-radius:50%; object-fit:cover; flex-shrink:0; }
-.nav-brand{ font-family:'Bebas Neue',cursive; font-size:16px; letter-spacing:0.07em; color:var(--teal-dark); line-height:1.1; }
+.nav-brand{ font-family:'Bebas Neue',cursive; font-size:18px; letter-spacing:0.07em; color:var(--teal-dark); line-height:1.1; }
 .nav-brand small{ display:block; font-family:'Inter',sans-serif; font-size:9px; font-weight:600; letter-spacing:0.18em; color:var(--text-mid); text-transform:uppercase; opacity:0.65; }
 .lang-btn{ background:var(--teal); border:none; border-radius:20px; padding:8px 16px; cursor:pointer; font-size:12px; font-weight:700; letter-spacing:0.15em; color:#fff; transition:all 0.2s; }
 .lang-btn:hover{ background:var(--teal-dark); transform:scale(1.05); }
@@ -49,11 +49,18 @@ nav{
   height:100%;
   background-size:cover;
   background-repeat:no-repeat;
-  background-position:center;
+  background-position:center 60%;
 }
-.slide:nth-child(3){
-  background-position:left center;
-}
+/* image-1: 4 women playing - show more of the women */
+.slide:nth-child(1){ background-position:center 75%; }
+/* image-2: man dive shot - show him fully */
+.slide:nth-child(2){ background-position:center 55%; }
+/* image-3: woman serving - show court and server */
+.slide:nth-child(3){ background-position:left 65%; }
+/* image-4: split screen - shift right to show paddle bump */
+.slide:nth-child(4){ background-position:right 50%; }
+/* image-5: paddles/equipment - show more paddles and balls */
+.slide:nth-child(5){ background-position:center 80%; }
 .slide::after{
   content:'';
   position:absolute; inset:0;
@@ -225,6 +232,12 @@ footer{ background:var(--navy-light); border-top:1px solid rgba(46,125,138,0.2);
 /* Lang */
 [data-lang="es"] .en{ display:none; }
 [data-lang="en"] .es{ display:none; }
+
+@media(max-width:767px){
+  .nav-brand{ font-size:22px; }
+  .nav-brand small{ font-size:10px; }
+  .lang-btn{ padding:8px 14px; font-size:11px; }
+}
 
 @media(min-width:768px){
   .hero{ max-height:700px; }
