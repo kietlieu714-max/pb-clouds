@@ -5,8 +5,12 @@ function toggleLang(){
   document.getElementById('langBtn').textContent=isEN?'EN / ES':'ES / EN';
 }
 
-// Auto-set language from URL parameter
+// Scroll to top on load and set language from URL
 window.addEventListener('DOMContentLoaded', function(){
+  window.scrollTo(0, 0);
+  // Hide I Want to Play on first slide
+  var btn=document.getElementById('heroBtn');
+  if(btn) btn.style.display='none';
   var urlLang = new URLSearchParams(window.location.search).get('lang');
   if(urlLang === 'es' || urlLang === 'en') {
     document.body.setAttribute('data-lang', urlLang);
@@ -19,6 +23,9 @@ function goTo(n){
   cur=(n+tot)%tot;
   document.getElementById('slidesWrap').style.transform='translateX('+(-cur*100)+'%)';
   document.querySelectorAll('.dot').forEach(function(d,i){d.classList.toggle('active',i===cur);});
+  // Hide I Want to Play on slide 1 (index 0), show on all others
+  var btn=document.getElementById('heroBtn');
+  if(btn) btn.style.display=cur===0?'none':'inline-block';
 }
 function nextSlide(){goTo(cur+1);resetAuto();}
 function prevSlide(){goTo(cur-1);resetAuto();}
