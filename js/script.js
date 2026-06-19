@@ -16,6 +16,20 @@ window.addEventListener('DOMContentLoaded', function(){
     document.body.setAttribute('data-lang', urlLang);
     document.getElementById('langBtn').textContent = urlLang === 'en' ? 'ES / EN' : 'EN / ES';
   }
+
+  // Swap to mobile portrait images on small screens
+  if(window.innerWidth <= 767){
+    var mobileImages = {
+      'slide-2': 'images/image-1-mobile.jpg',
+      'slide-3': 'images/image-2-mobile.jpg',
+      'slide-4': 'images/image-3-mobile.jpg',
+      'slide-5': 'images/image-5-mobile.jpg'
+    };
+    Object.keys(mobileImages).forEach(function(cls){
+      var el = document.querySelector('.'+cls);
+      if(el) el.style.backgroundImage = "url('"+mobileImages[cls]+"')";
+    });
+  }
 });
 
 var cur=0,tot=5,autoT,startX=0;
