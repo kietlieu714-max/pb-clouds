@@ -24,9 +24,22 @@ nav{
 .lang-btn{ background:var(--teal); border:none; border-radius:20px; padding:8px 16px; cursor:pointer; font-size:12px; font-weight:700; letter-spacing:0.15em; color:#fff; transition:all 0.2s; }
 .lang-btn:hover{ background:var(--teal-dark); transform:scale(1.05); }
 
+/* TAGLINE BAR */
+.tagline-bar{
+  position:fixed; top:58px; left:0; right:0; z-index:199;
+  background:var(--teal);
+  padding:7px 24px;
+  text-align:center;
+  font-family:'Bebas Neue',cursive;
+  font-size:18px;
+  letter-spacing:0.05em;
+  color:#fff;
+  white-space:nowrap;
+}
+
 /* HERO */
 .hero{
-  margin-top:58px;
+  margin-top:88px;
   position:relative;
   width:100%;
   height:calc(100vh - 58px);
@@ -49,18 +62,75 @@ nav{
   height:100%;
   background-size:cover;
   background-repeat:no-repeat;
-  background-position:center 60%;
+  background-position:center 40%;
 }
-/* image-1: 4 women playing - show more of the women */
-.slide:nth-child(1){ background-position:center 75%; }
-/* image-2: man dive shot - show him fully */
-.slide:nth-child(2){ background-position:center 55%; }
-/* image-3: woman serving - show court and server */
-.slide:nth-child(3){ background-position:left 65%; }
-/* image-4: split screen - shift right to show paddle bump */
-.slide:nth-child(4){ background-position:right 50%; }
-/* image-5: paddles/equipment - show more paddles and balls */
-.slide:nth-child(5){ background-position:center 80%; }
+/* Desktop - landscape images, show mountains + action */
+.slide-1{ background-position:center 40%; }
+.slide-2{ background-position:center 55%; }
+.slide-3{ background-position:center 50%; }
+.slide-4{ background-position:center 45%; }
+.slide-5{ background-position:center 50%; }
+.slide-6{ background-position:center 35%; }
+
+/* Slide text overlay - text at top */
+.slide-overlay-light{
+  position:absolute; inset:0; z-index:2;
+  display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
+  padding:20px 24px;
+  text-align:center;
+}
+.slide-caption{
+  font-family:'Bebas Neue',cursive;
+  font-size:24px;
+  line-height:1.3;
+  color:#fff;
+  letter-spacing:0.05em;
+  text-shadow:0 2px 12px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,1);
+  margin:0 0 14px;
+}
+.slide-caption strong{
+  color:#6ecad8;
+  display:block;
+  font-size:28px;
+}
+/* Branded social buttons on slide */
+.slide-social-btns{
+  display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:12px;
+}
+.btn-social-slide{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 16px;
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,0.4);
+  border-radius:24px;
+  text-decoration:none;
+  color:#fff;
+  font-size:12px;
+  font-weight:600;
+  transition:all 0.2s;
+}
+.btn-social-slide{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:4px;
+  background:none;
+  border:none;
+  text-decoration:none;
+  transition:transform 0.2s;
+}
+.btn-social-slide img{ width:40px; height:40px; object-fit:contain; }
+.btn-social-slide:hover{ transform:scale(1.1); }
+/* Footer links */
+.footer-links{ display:flex; gap:24px; justify-content:center; align-items:center; flex-wrap:wrap; margin-top:16px; }
+.footer-logo-link{
+  display:inline-flex; align-items:center; gap:8px;
+  text-decoration:none;
+  transition:transform 0.2s;
+}
+.footer-logo-link:hover{ transform:scale(1.1); }
+.footer-logo-link img{ width:44px; height:44px; object-fit:contain; }
+.footer-wa-link img{ width:44px; height:44px; }
+.footer-wa-link span{ color:#fff; font-size:13px; font-weight:600; }
 .slide::after{
   content:'';
   position:absolute; inset:0;
@@ -234,9 +304,18 @@ footer{ background:var(--navy-light); border-top:1px solid rgba(46,125,138,0.2);
 [data-lang="en"] .es{ display:none; }
 
 @media(max-width:767px){
+  /* Shorter hero on mobile so sections show below the fold */
+  .hero{ height:60vh; min-height:340px; max-height:500px; }
+
+  /* Swap to portrait mobile images */
+  .slide-1{ background-image:url('images/image-1-mobile.jpg') !important; background-position:center 40%; }
+  .slide-2{ background-image:url('images/image-2-mobile.jpg') !important; background-position:center 35%; }
+  .slide-3{ background-image:url('images/image-3-mobile.jpg') !important; background-position:center 40%; }
+  .slide-4{ background-position:center 50%; }
+  .slide-5{ background-image:url('images/image-5-mobile.jpg') !important; background-position:center 30%; }
+
   .nav-brand{ font-size:22px; }
   .nav-brand small{ font-size:10px; }
-  .lang-btn{ padding:8px 14px; font-size:11px; }
 }
 
 @media(min-width:768px){
