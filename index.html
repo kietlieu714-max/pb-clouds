@@ -19,30 +19,46 @@
   <button class="lang-btn" onclick="toggleLang()" id="langBtn">ES / EN</button>
 </nav>
 
+<!-- TAGLINE BAR -->
+<div class="tagline-bar">
+  <span class="en">FASTEST GROWING SPORT ON THE PLANET</span>
+  <span class="es">EL DEPORTE DE MÁS RÁPIDO CRECIMIENTO</span>
+</div>
+
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="slides-wrap" id="slidesWrap">
-    <div class="slide active" style="background-image:url('images/image-4.png')"></div>
-<div class="slide " style="background-image:url('images/image-1.png')"></div>
-<div class="slide " style="background-image:url('images/image-2.png')"></div>
-<div class="slide " style="background-image:url('images/image-3.png')"></div>
-<div class="slide " style="background-image:url('images/image-5.jpeg')"></div>
+    <div class="slide slide-1 active" style="background-image:url('images/xmas.jpg')">
+      <div class="slide-overlay-light">
+        <p class="slide-caption en">What happens when mountain village kids<br><strong>taste 600+ Vietnamese tequeños<br>& play pickleball</strong><br>for the first time on Christmas?</p>
+        <p class="slide-caption es">¿Qué pasa cuando niños de la montaña<br><strong>prueban 600+ tequeños vietnamitas<br>& juegan pickleball</strong><br>por primera vez en Navidad?</p>
+        <div class="slide-social-btns">
+          <a href="https://www.instagram.com/pickleballintheclouds" target="_blank" class="btn-social-slide">
+            <img src="images/ig-logo.png" alt="Instagram">
+          </a>
+          <a href="https://www.facebook.com/Pickleballintheclouds" target="_blank" class="btn-social-slide">
+            <img src="images/fb-logo.png" alt="Facebook">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="slide slide-2" style="background-image:url('images/image-1.jpg')"></div>
+    <div class="slide slide-3" style="background-image:url('images/image-2.jpg')"></div>
+    <div class="slide slide-4" style="background-image:url('images/image-3.jpg')"></div>
+    <div class="slide slide-5" style="background-image:url('images/paddles.jpg')"></div>
+  </div>
 
   </div>
 
   <button class="carousel-arrow arrow-prev" onclick="prevSlide()" aria-label="Previous">&#8249;</button>
   <button class="carousel-arrow arrow-next" onclick="nextSlide()" aria-label="Next">&#8250;</button>
 
-  <div class="hero-text">
-    <p style="color:#6ecad8; font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; margin:0 0 16px; text-shadow:0 0 12px rgba(0,0,0,1), 0 2px 8px rgba(0,0,0,0.9), 0 0 4px rgba(0,0,0,1);">
-      <span class="en">Fastest growing sport on the planet 🏓</span>
-      <span class="es">El deporte de más rápido crecimiento 🏓</span>
-    </p>
-    <a href="#signup" class="btn-hero">
+  <div class="hero-text" id="heroText">
+    <a href="#signup" class="btn-hero" id="heroBtn">
       <span class="en">I Want to Play →</span>
       <span class="es">Quiero Jugar →</span>
     </a>
-    <div class="dots-row" id="dotsWrap"><button class="dot active" onclick="goTo(0)" aria-label="Go to slide 1"></button><button class="dot " onclick="goTo(1)" aria-label="Go to slide 2"></button><button class="dot " onclick="goTo(2)" aria-label="Go to slide 3"></button><button class="dot " onclick="goTo(3)" aria-label="Go to slide 4"></button><button class="dot " onclick="goTo(4)" aria-label="Go to slide 5"></button></div>
+    <div class="dots-row" id="dotsWrap"><button class="dot active" onclick="goTo(0)" aria-label="Go to slide 1"></button><button class="dot" onclick="goTo(1)" aria-label="Go to slide 2"></button><button class="dot" onclick="goTo(2)" aria-label="Go to slide 3"></button><button class="dot" onclick="goTo(3)" aria-label="Go to slide 4"></button><button class="dot" onclick="goTo(4)" aria-label="Go to slide 5"></button></div>
   </div>
 </section>
 
@@ -77,11 +93,11 @@
   <div class="sessions-inner">
     <span class="section-label en">Sessions</span>
     <span class="section-label es">Sesiones</span>
-    <h2 class="section-title en">Every Saturday</h2>
-    <h2 class="section-title es">Cada Sábado</h2>
+    <h2 class="section-title en">Every Thursday & Saturday</h2>
+    <h2 class="section-title es">Jueves y Sábados</h2>
     <div class="session-card">
       <div class="session-header">
-        <div class="session-day">SAT</div>
+        <div class="session-day">THU<br>SAT</div>
         <div class="session-when">
           <span class="session-recurring en">Weekly</span>
           <span class="session-recurring es">Semanal</span>
@@ -90,28 +106,50 @@
         </div>
       </div>
       <div class="session-body">
-        <p class="session-note en">First 30 min: intro to the game — rules, how to play, your first rally. No experience needed.<br><br>Next 90 min: open play. Already know how to play? Show up and play with tips to boost your game.</p>
-        <p class="session-note es">Primeros 30 min: intro al juego — reglas, cómo jugar, tu primer rally. Sin experiencia necesaria.<br><br>Siguientes 90 min: juego libre. ¿Ya sabes jugar? Solo llega y juega con consejos para mejorar tu juego.</p>
+        <p class="session-note en">First 30 min: Quick intro to rules and gameplay — you'll be playing within minutes, no experience needed.<br><br>Next 90 min: Play real games while I give tips and adjustments on the court.</p>
+        <p class="session-note es">Primeros 30 min: Intro rápida a las reglas — estarás jugando en minutos, sin experiencia necesaria.<br><br>Siguientes 90 min: Juegos reales mientras te doy consejos y ajustes en la cancha.</p>
       </div>
     </div>
 
+    <!-- ALTITUDE HOOK -->
+    <div style="margin:28px 0; padding:20px; background:rgba(46,125,138,0.12); border-left:3px solid var(--teal); border-radius:8px;">
+      <p class="en" style="margin:0; font-size:14px; line-height:1.7; color:var(--navy);">⛰️ <strong>Play at 3,000m (9,843 ft)</strong> in the Sacred Valley, Cusco. The thin air changes everything — faster speeds, different dynamics, unlike anywhere else on earth.</p>
+      <p class="es" style="margin:0; font-size:14px; line-height:1.7; color:var(--navy);">⛰️ <strong>Juega a 3,000m</strong> en el Valle Sagrado, Cusco. El aire cambia todo — velocidades distintas, dinámicas únicas, diferente a cualquier otro lugar del planeta.</p>
+    </div>
+
+    <!-- WHAT YOU GET -->
     <span class="section-label" style="margin-top:28px;display:block;">
-      <span class="en">What's Included</span>
+      <span class="en">What You Get</span>
       <span class="es">Qué Incluye</span>
     </span>
     <ul class="provide-list">
-      <li><span class="check">✓</span><span class="en">Premium paddles from the USA — Joola, Selkirk, Facolas, 6.0, Wilson</span><span class="es">Paletas premium de USA — Joola, Selkirk, Facolas, 6.0, Wilson</span></li>
-      <li><span class="check">✓</span><span class="en">USAP-approved Joola balls — tournament-quality</span><span class="es">Pelotas Joola aprobadas USAP — calidad torneo</span></li>
-      <li><span class="check">✓</span><span class="en">Regulation 22ft portable net — shipped from the USA</span><span class="es">Red portátil de 22ft regulación — enviada desde USA</span></li>
-      <li><span class="check">✓</span><span class="en">Tips to boost your game + coaching insights</span><span class="es">Consejos para mejorar tu juego + insights de coaching</span></li>
-      <li><span class="check">✓</span><span class="en">Community & good vibes</span><span class="es">Comunidad y buen ambiente</span></li>
+      <li><span class="check">✓</span><span class="en">Real-time coaching on the court</span><span class="es">Coaching en tiempo real en la cancha</span></li>
+      <li><span class="check">✓</span><span class="en">Beginner-friendly group — everyone learns fast</span><span class="es">Grupo amigable para principiantes</span></li>
+      <li><span class="check">✓</span><span class="en">Small groups so you get personal attention</span><span class="es">Grupos pequeños para atención personalizada</span></li>
+      <li><span class="check">✓</span><span class="en">Play with locals & travelers learning together</span><span class="es">Juega con locales y viajeros aprendiendo juntos</span></li>
+      <li><span class="check">✓</span><span class="en">All equipment provided (paddles, balls, net)</span><span class="es">Todo el equipo incluido (paletas, pelotas, red)</span></li>
+      <li><span class="check">✓</span><span class="en">Premium USA gear — Joola, Selkirk, Facolas, 6.0, Wilson</span><span class="es">Equipo premium de USA — Joola, Selkirk, Facolas, 6.0, Wilson</span></li>
     </ul>
+
+    <!-- SUPPORTS -->
+    <span class="section-label" style="margin-top:28px;display:block;">
+      <span class="en">Your Participation Supports</span>
+      <span class="es">Tu Participación Apoya</span>
+    </span>
+    <ul class="provide-list">
+      <li><span class="check" style="color:#e8a020;">❤️</span><span class="en">Court improvement — painted lines & professional maintenance</span><span class="es">Mejora de la cancha — líneas pintadas y mantenimiento</span></li>
+      <li><span class="check" style="color:#e8a020;">❤️</span><span class="en">Equipment — tournament-quality balls & paddles</span><span class="es">Equipo — pelotas y paletas de calidad torneo</span></li>
+      <li><span class="check" style="color:#e8a020;">❤️</span><span class="en">Teaching pickleball to local kids & indigenous communities</span><span class="es">Enseñar pickleball a niños locales y comunidades indígenas</span></li>
+      <li><span class="check" style="color:#e8a020;">❤️</span><span class="en">Sharing Vietnamese food with indigenous mountain communities around the Sacred Valley</span><span class="es">Compartir comida vietnamita con comunidades indígenas del Valle Sagrado</span></li>
+    </ul>
+
+    <!-- PRICE -->
     <div class="price-row">
       <div><div class="price-label en">Play for</div><div class="price-label es">Juega por</div></div>
       <div style="text-align:right;">
-        <div class="price-amount">S/ 20</div>
-        <div class="price-sub en">per person · per session</div>
-        <div class="price-sub es">por persona · por sesión</div>
+        <div class="price-amount">S/ 30</div>
+        <div class="price-sub en">2 hours · all equipment included</div>
+        <div class="price-sub es">2 horas · todo el equipo incluido</div>
       </div>
     </div>
   </div>
@@ -206,7 +244,16 @@
   <div class="footer-name">Pickleball in the Clouds</div>
   <div class="footer-tag">Huycho · Sacred Valley · Peru</div>
   <div class="footer-links">
-    <a href="https://wa.me/17144785438" class="footer-link" style="background:#25D366; color:#fff; padding:12px 24px; border-radius:8px; text-decoration:none; font-weight:700; display:inline-flex; align-items:center; gap:8px;">💬 Contact on WhatsApp</a>
+    <a href="https://wa.me/17144785438" class="footer-logo-link footer-wa-link">
+      <img src="images/wa-logo.png" alt="WhatsApp">
+      <span>Contact Me</span>
+    </a>
+    <a href="https://www.instagram.com/pickleballintheclouds" target="_blank" class="footer-logo-link">
+      <img src="images/ig-logo.png" alt="Instagram">
+    </a>
+    <a href="https://www.facebook.com/Pickleballintheclouds" target="_blank" class="footer-logo-link">
+      <img src="images/fb-logo.png" alt="Facebook">
+    </a>
   </div>
   <p class="footer-copy">© 2025 Pickleball in the Clouds · Sacred Valley, Peru</p>
 </footer>
