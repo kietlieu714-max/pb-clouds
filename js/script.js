@@ -18,18 +18,22 @@ window.addEventListener('DOMContentLoaded', function(){
   }
 
   // Swap to mobile portrait images on small screens
-  if(window.innerWidth <= 767){
-    var mobileImages = {
-      'slide-2': 'images/image-1-mobile.jpg',
-      'slide-3': 'images/image-2-mobile.jpg',
-      'slide-4': 'images/image-3-mobile.jpg',
-      'slide-5': 'images/image-5-mobile.jpg'
-    };
-    Object.keys(mobileImages).forEach(function(cls){
-      var el = document.querySelector('.'+cls);
-      if(el) el.style.backgroundImage = "url('"+mobileImages[cls]+"')";
-    });
+  function swapMobileImages(){
+    if(window.innerWidth <= 767){
+      var mobileImages = {
+        'slide-2': 'images/image-1-mobile.jpg',
+        'slide-3': 'images/image-2-mobile.jpg',
+        'slide-4': 'images/image-3-mobile.jpg',
+        'slide-5': 'images/image-5-mobile.jpg'
+      };
+      Object.keys(mobileImages).forEach(function(cls){
+        var el = document.querySelector('.'+cls);
+        if(el) el.style.backgroundImage = "url('"+mobileImages[cls]+"')";
+      });
+    }
   }
+  swapMobileImages();
+  window.addEventListener('resize', swapMobileImages);
 });
 
 var cur=0,tot=5,autoT,startX=0;
