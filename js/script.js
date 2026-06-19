@@ -28,11 +28,11 @@ window.addEventListener('DOMContentLoaded', function(){
       };
       Object.keys(mobileImages).forEach(function(cls){
         var el = document.querySelector('.'+cls);
-        if(el) el.style.backgroundImage = "url('"+mobileImages[cls]+"')";
+        if(el) el.style.setProperty('background-image', "url('"+mobileImages[cls]+"')", 'important');
       });
     }
   }
-  swapMobileImages();
+  setTimeout(swapMobileImages, 100);
   window.addEventListener('resize', swapMobileImages);
 });
 
