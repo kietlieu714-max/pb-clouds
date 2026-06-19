@@ -112,9 +112,9 @@ nav{
 }
 .btn-social-slide{
   display:inline-flex; align-items:center; justify-content:center;
-  padding:4px;
-  background:none;
-  border:none;
+  padding:0;
+  background:none !important;
+  border:none !important;
   text-decoration:none;
   transition:transform 0.2s;
 }
