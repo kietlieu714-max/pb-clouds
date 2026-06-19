@@ -307,11 +307,15 @@ footer{ background:var(--navy-light); border-top:1px solid rgba(46,125,138,0.2);
   /* Shorter hero on mobile so sections show below the fold */
   .hero{ height:60vh; min-height:340px; max-height:500px; }
 
-  /* Swap to portrait mobile images */
-  .slide-1{ background-image:url('images/image-1-mobile.jpg') !important; background-position:center 40%; }
-  .slide-2{ background-image:url('images/image-2-mobile.jpg') !important; background-position:center 35%; }
-  .slide-3{ background-image:url('images/image-3-mobile.jpg') !important; background-position:center 40%; }
-  .slide-4{ background-position:center 50%; }
+  /* slide-1 = xmas (no portrait version, use landscape) */
+  .slide-1{ background-position:center 40%; }
+  /* slide-2 = women playing → image-1-mobile.jpg */
+  .slide-2{ background-image:url('images/image-1-mobile.jpg') !important; background-position:center 40%; }
+  /* slide-3 = man dive → image-2-mobile.jpg */
+  .slide-3{ background-image:url('images/image-2-mobile.jpg') !important; background-position:center 35%; }
+  /* slide-4 = 4 players court → image-3-mobile.jpg */
+  .slide-4{ background-image:url('images/image-3-mobile.jpg') !important; background-position:center 40%; }
+  /* slide-5 = paddles → image-5-mobile.jpg */
   .slide-5{ background-image:url('images/image-5-mobile.jpg') !important; background-position:center 30%; }
 
   .nav-brand{ font-size:22px; }
