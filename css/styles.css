@@ -258,35 +258,80 @@ nav{
 /* COACHING TABLE */
 .coach-table{ border:none; border-radius:14px; overflow:hidden; background:#fff; }
 .coach-row{
-  display:grid; grid-template-columns:40px 1fr auto; align-items:center;
-  padding:13px 16px; border-bottom:1px solid rgba(46,125,138,0.12);
+  display:grid; grid-template-columns:36px 1fr auto; align-items:center; gap:8px;
+  padding:12px 14px; border-bottom:1px solid rgba(46,125,138,0.12);
 }
 .coach-row:last-child{ border-bottom:none; }
-.coach-head{ padding:10px 14px; background:rgba(46,125,138,0.08); border-bottom:1px solid rgba(46,125,138,0.2); }
+.coach-head{
+  display:grid; grid-template-columns:36px 1fr auto; gap:8px; align-items:center;
+  padding:10px 14px; background:rgba(46,125,138,0.08); border-bottom:1px solid rgba(46,125,138,0.2);
+}
 .coach-col{
-  font-size:9px; font-weight:800; letter-spacing:0.08em;
-  text-transform:uppercase; color:var(--text-mid); text-align:left;
-  white-space:nowrap;
+  font-size:9px; font-weight:800; letter-spacing:0.06em;
+  text-transform:uppercase; color:var(--text-mid);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
 }
 .coach-col-pack{
-  color:#fff; background:var(--teal); padding:4px 10px;
+  color:#fff; background:var(--teal); padding:4px 8px;
   border-radius:6px; text-align:center; white-space:nowrap;
+  font-size:9px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase;
 }
 .coach-people{ font-size:15px; font-weight:700; color:var(--text); }
 .coach-price{
-  font-family:'Bebas Neue',cursive; font-size:22px;
-  color:var(--text-mid); text-align:left;
-  display:inline-flex; align-items:baseline; gap:0;
-  min-width:90px;
+  font-family:'Bebas Neue',cursive; font-size:21px;
+  color:var(--text-mid); display:inline-flex; align-items:baseline; gap:0;
 }
 .coach-price.coach-pack{
-  color:#fff; font-size:22px; font-weight:400;
-  background:var(--teal); border-radius:6px; padding:3px 10px;
-  min-width:90px; justify-content:flex-start;
+  color:#fff; font-size:21px; font-weight:400;
+  background:var(--teal); border-radius:6px; padding:3px 8px;
+  display:inline-flex; align-items:baseline;
 }
-.coach-price.coach-pack small{ color:rgba(255,255,255,0.8); }
+.coach-price.coach-pack small{ color:rgba(255,255,255,0.85); }
 .coach-price small{ font-family:'Inter',sans-serif; font-size:10px; color:var(--text-mid); font-weight:500; margin-left:2px; }
-/* SOCIAL PROOF */
+/* COACHING TRIAL SPECIAL */
+.coach-trial{
+  background:linear-gradient(135deg,#c8860a,#e8a020,#f5b83a);
+  border-radius:14px; padding:18px; margin:12px 0;
+  box-shadow:0 4px 20px rgba(200,134,10,0.45);
+}
+.coach-trial-badge{
+  font-size:13px; font-weight:800; letter-spacing:0.15em;
+  color:#fff; margin-bottom:4px; text-transform:uppercase;
+  text-shadow:0 1px 3px rgba(0,0,0,0.3);
+}
+.coach-trial-pct{
+  font-family:'Bebas Neue',cursive; font-size:64px; line-height:1;
+  color:#fff; text-shadow:0 2px 6px rgba(0,0,0,0.25); margin-bottom:12px;
+  letter-spacing:0.02em;
+}
+.coach-trial-label{
+  font-size:10px; font-weight:800; letter-spacing:0.1em;
+  text-transform:uppercase; color:rgba(255,255,255,0.85); margin-bottom:4px;
+}
+.coach-trial-inner{
+  display:flex; align-items:center; justify-content:space-around; gap:12px;
+  margin-bottom:14px;
+}
+.coach-trial-cross{
+  font-family:'Bebas Neue',cursive; font-size:28px;
+  color:rgba(255,255,255,0.6); text-decoration:line-through;
+}
+.coach-trial-price{
+  font-family:'Bebas Neue',cursive; font-size:32px;
+  color:#fff; line-height:1; text-shadow:0 2px 4px rgba(0,0,0,0.2);
+}
+.coach-trial-price small{
+  font-family:'Inter',sans-serif; font-size:12px;
+  color:rgba(255,255,255,0.85); font-weight:600;
+}
+.coach-trial-sub{
+  font-size:11px; color:rgba(255,255,255,0.85); margin-top:4px; font-weight:700;
+}
+.coach-trial-desc{
+  font-size:13px; color:rgba(255,255,255,0.95); line-height:1.6;
+  text-align:center; padding:12px 8px; margin-top:2px;
+  background:rgba(0,0,0,0.15); border-radius:8px;
+}
 .social-proof{
   margin-top:20px; padding:12px 18px; text-align:center;
   background:rgba(46,125,138,0.1); border-radius:24px;
