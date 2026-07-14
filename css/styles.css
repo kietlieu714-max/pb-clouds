@@ -187,7 +187,7 @@ nav{
 
 /* WHAT IS */
 .what-text{ font-size:16px; line-height:1.8; color:var(--text-mid); margin-bottom:24px; }
-.quick-hits{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.quick-hits{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:12px; }
 .qh{
   background:var(--off-white); border:1px solid var(--parchment-dark);
   border-radius:10px; padding:18px 10px; text-align:center;
@@ -195,6 +195,12 @@ nav{
 }
 .qh-icon{ font-size:26px; margin-bottom:6px; }
 .qh-label{ font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); line-height:1.3; }
+/* LAUGHS BAR */
+.laughs-bar{
+  background:var(--teal); color:#fff; border-radius:12px;
+  padding:13px 18px; text-align:center;
+  font-size:14px; font-weight:600; margin:12px 0 16px;
+}
 
 /* SESSIONS */
 .sessions-bg{ background:var(--off-white); padding:48px 24px; }
@@ -256,23 +262,30 @@ nav{
   padding:13px 16px; border-bottom:1px solid rgba(46,125,138,0.12);
 }
 .coach-row:last-child{ border-bottom:none; }
-.coach-head{ padding:10px 16px; background:rgba(46,125,138,0.08); border-bottom:1px solid rgba(46,125,138,0.2); }
-.coach-col{ font-size:10px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-mid); text-align:left; }
+.coach-head{ padding:10px 14px; background:rgba(46,125,138,0.08); border-bottom:1px solid rgba(46,125,138,0.2); }
+.coach-col{
+  font-size:9px; font-weight:800; letter-spacing:0.08em;
+  text-transform:uppercase; color:var(--text-mid); text-align:left;
+  white-space:nowrap;
+}
 .coach-col-pack{
-  color:#fff; background:var(--teal); padding:4px 8px; border-radius:6px; text-align:center;
+  color:#fff; background:var(--teal); padding:4px 10px;
+  border-radius:6px; text-align:center; white-space:nowrap;
 }
 .coach-people{ font-size:15px; font-weight:700; color:var(--text); }
 .coach-price{
   font-family:'Bebas Neue',cursive; font-size:22px;
   color:var(--text-mid); text-align:left;
-  display:flex; align-items:baseline; gap:3px;
+  display:inline-flex; align-items:baseline; gap:0;
+  min-width:90px;
 }
 .coach-price.coach-pack{
   color:#fff; font-size:22px; font-weight:400;
-  background:var(--teal); border-radius:6px; padding:2px 8px;
+  background:var(--teal); border-radius:6px; padding:3px 10px;
+  min-width:90px; justify-content:flex-start;
 }
 .coach-price.coach-pack small{ color:rgba(255,255,255,0.8); }
-.coach-price small{ font-family:'Inter',sans-serif; font-size:10px; color:var(--text-mid); font-weight:500; }
+.coach-price small{ font-family:'Inter',sans-serif; font-size:10px; color:var(--text-mid); font-weight:500; margin-left:2px; }
 /* SOCIAL PROOF */
 .social-proof{
   margin-top:20px; padding:12px 18px; text-align:center;
