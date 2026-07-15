@@ -47,10 +47,10 @@ src="https://www.facebook.com/tr?id=1375770241134163&ev=PageView&noscript=1"
 </nav>
 
 <!-- TAGLINE BAR -->
-<div class="tagline-bar">
-  <span class="en">FASTEST GROWING SPORT ON THE PLANET</span>
-  <span class="es">EL DEPORTE DE MÁS RÁPIDO CRECIMIENTO</span>
-</div>
+<a href="#signup" class="tagline-bar">
+  <span class="en">WANT TO PLAY THE FASTEST GROWING SPORT IN THE WORLD? →</span>
+  <span class="es">¿QUIERES JUGAR EL DEPORTE DE MÁS RÁPIDO CRECIMIENTO? →</span>
+</a>
 
 <!-- HERO -->
 <section class="hero" id="hero">
@@ -173,14 +173,14 @@ src="https://www.facebook.com/tr?id=1375770241134163&ev=PageView&noscript=1"
     </ul>
 
     <!-- PRICING TIERS -->
-    <p style="text-align:center; font-size:13px; color:var(--text-mid); margin-top:28px; margin-bottom:6px;">
-      <span class="en">2 hours · all equipment included</span>
-      <span class="es">2 horas · todo el equipo incluido</span>
-    </p>
-    <span class="section-label" style="margin-top:4px;display:block;">
+    <span class="section-label" style="margin-top:28px;display:block;">
       <span class="en">Pricing</span>
       <span class="es">Precios</span>
     </span>
+    <div class="pricing-highlight">
+      <span class="en">⏱ 2 Hours · All Equipment Included</span>
+      <span class="es">⏱ 2 Horas · Todo el Equipo Incluido</span>
+    </div>
     <div class="pricing-grid">
       <div class="price-card price-card-best">
         <div class="price-card-badge en">BEST VALUE · 20% OFF</div>
@@ -245,8 +245,10 @@ src="https://www.facebook.com/tr?id=1375770241134163&ev=PageView&noscript=1"
 
       <!-- FIRST SESSION SPECIAL -->
       <div class="coach-trial">
-        <div class="coach-trial-badge en">🎉 50% OFF · FIRST PRIVATE SESSION</div>
-        <div class="coach-trial-badge es">🎉 50% DTO · PRIMERA SESIÓN PRIVADA</div>
+        <div class="coach-trial-badge-wrap">
+          <div class="coach-trial-badge en">🎉 50% OFF FIRST SESSION</div>
+          <div class="coach-trial-badge es">🎉 50% DTO PRIMERA SESIÓN</div>
+        </div>
         <div class="coach-trial-inner">
           <div style="text-align:center;">
             <div class="coach-trial-label en">Solo</div>
@@ -283,14 +285,14 @@ src="https://www.facebook.com/tr?id=1375770241134163&ev=PageView&noscript=1"
       <!-- PRICING TABLE -->
       <div class="coach-table">
         <div class="coach-row coach-head">
-          <span class="coach-col" style="white-space:nowrap;">Players</span>
-          <span class="coach-col en" style="white-space:nowrap;">Per class</span><span class="coach-col es" style="white-space:nowrap;">Por clase</span>
+          <span class="coach-col en" style="white-space:nowrap;">Players <span class="coach-sep">|</span> Per Class</span>
+          <span class="coach-col es" style="white-space:nowrap;">Jugadores <span class="coach-sep">|</span> Por Clase</span>
           <span class="coach-col coach-col-pack en" style="white-space:nowrap;">⭐ 4-Pack · 20% off</span><span class="coach-col coach-col-pack es" style="white-space:nowrap;">⭐ Pack 4 · 20% dto</span>
         </div>
-        <div class="coach-row"><span class="coach-people">4</span><span class="coach-price">S/ 60<small class="en">/hr ea</small><small class="es">/hr c/u</small></span><span class="coach-price coach-pack">S/ 50<small class="en">/hr ea</small><small class="es">/hr c/u</small></span></div>
-        <div class="coach-row"><span class="coach-people">3</span><span class="coach-price">S/ 70<small class="en">/hr ea</small><small class="es">/hr c/u</small></span><span class="coach-price coach-pack">S/ 58<small class="en">/hr ea</small><small class="es">/hr c/u</small></span></div>
-        <div class="coach-row"><span class="coach-people">2</span><span class="coach-price">S/ 80<small class="en">/hr ea</small><small class="es">/hr c/u</small></span><span class="coach-price coach-pack">S/ 67<small class="en">/hr ea</small><small class="es">/hr c/u</small></span></div>
-        <div class="coach-row"><span class="coach-people">1</span><span class="coach-price">S/ 120<small>/hr</small></span><span class="coach-price coach-pack">S/ 100<small>/hr</small></span></div>
+        <div class="coach-row"><span class="coach-line"><span class="coach-people">4</span><span class="coach-sep">|</span><span class="coach-price">S/ 60<small class="en">/hr ea</small><small class="es">/hr c/u</small></span></span><span class="coach-price coach-pack">S/ 50<small class="en">/hr ea</small><small class="es">/hr c/u</small></span></div>
+        <div class="coach-row"><span class="coach-line"><span class="coach-people">3</span><span class="coach-sep">|</span><span class="coach-price">S/ 70<small class="en">/hr ea</small><small class="es">/hr c/u</small></span></span><span class="coach-price coach-pack">S/ 58<small class="en">/hr ea</small><small class="es">/hr c/u</small></span></div>
+        <div class="coach-row"><span class="coach-line"><span class="coach-people">2</span><span class="coach-sep">|</span><span class="coach-price">S/ 80<small class="en">/hr ea</small><small class="es">/hr c/u</small></span></span><span class="coach-price coach-pack">S/ 67<small class="en">/hr ea</small><small class="es">/hr c/u</small></span></div>
+        <div class="coach-row"><span class="coach-line"><span class="coach-people">1</span><span class="coach-sep">|</span><span class="coach-price">S/ 120<small>/hr</small></span></span><span class="coach-price coach-pack">S/ 100<small>/hr</small></span></div>
       </div>
 
       <!-- WA CTA -->
@@ -354,7 +356,7 @@ src="https://www.facebook.com/tr?id=1375770241134163&ev=PageView&noscript=1"
   <div class="footer-name">Pickleball in the Clouds</div>
   <div class="footer-tag"><a href="https://maps.app.goo.gl/RBADgs5QPrM97pjN8" target="_blank" style="color:inherit; text-decoration:underline; text-underline-offset:3px;">📍 Huycho · Sacred Valley · Peru</a></div>
   <div class="footer-links">
-    <a href="https://wa.me/17144785438" class="footer-icon-link" title="WhatsApp">
+    <a href="https://wa.me/17144785438" target="_blank" class="footer-icon-link" title="WhatsApp">
       <svg viewBox="0 0 24 24" width="36" height="36" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#25D366"/><path fill="#fff" d="M12 4.2C7.7 4.2 4.2 7.7 4.2 12c0 1.4.4 2.7 1 3.9L4 20l4.2-1.1c1.1.6 2.4.9 3.8.9 4.3 0 7.8-3.5 7.8-7.8S16.3 4.2 12 4.2zm4.6 10.8c-.2.5-1 1-1.5 1.1-.4.1-.9.1-1.4-.1-.3-.1-.7-.2-1.2-.5-2.1-1-3.5-3.1-3.6-3.3-.1-.2-1-1.3-1-2.5s.6-1.8.8-2c.2-.2.5-.3.6-.3h.5c.1 0 .3 0 .5.4.2.4.7 1.6.7 1.7.1.1.1.3 0 .4-.1.2-.1.3-.3.4-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1.8.7 1.6 1 1.8 1.1.2.1.4.1.5-.1.2-.2.6-.7.8-.9.2-.2.3-.2.5-.1l1.6.8c.2.1.4.2.4.3.1.2 0 .9-.2 1.3z"/></svg>
     </a>
     <a href="https://www.instagram.com/pickleballintheclouds" target="_blank" class="footer-icon-link" title="Instagram">
