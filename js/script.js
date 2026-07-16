@@ -8,9 +8,6 @@ function toggleLang(){
 // Scroll to top on load and set language from URL
 window.addEventListener('DOMContentLoaded', function(){
   window.scrollTo(0, 0);
-  // Hide I Want to Play on first slide
-  var btn=document.getElementById('heroBtn');
-  if(btn) btn.style.display='none';
   var urlLang = new URLSearchParams(window.location.search).get('lang');
   if(urlLang === 'es' || urlLang === 'en') {
     document.body.setAttribute('data-lang', urlLang);
@@ -21,7 +18,7 @@ window.addEventListener('DOMContentLoaded', function(){
   function swapMobileImages(){
     if(window.innerWidth <= 767){
       var mobileImages = {
-        'slide-2': 'images/image-1-mobile.jpg',
+        'slide-1': 'images/image-1-mobile.jpg',
         'slide-3': 'images/image-2-mobile.jpg',
         'slide-4': 'images/image-3-mobile.jpg',
         'slide-5': 'images/image-5-mobile.jpg'
@@ -41,9 +38,6 @@ function goTo(n){
   cur=(n+tot)%tot;
   document.getElementById('slidesWrap').style.transform='translateX('+(-cur*100)+'%)';
   document.querySelectorAll('.dot').forEach(function(d,i){d.classList.toggle('active',i===cur);});
-  // Hide I Want to Play on slide 1 (index 0), show on all others
-  var btn=document.getElementById('heroBtn');
-  if(btn) btn.style.display=cur===0?'none':'inline-block';
 }
 function nextSlide(){goTo(cur+1);resetAuto();}
 function prevSlide(){goTo(cur-1);resetAuto();}
@@ -68,6 +62,21 @@ function toggleDay(el,val){
   el.classList.toggle('active',selDays.has(val));
   document.getElementById('fdays').value=Array.from(selDays).join(',');
 }
+var selSports=new Set();
+function toggleSport(el,val){
+  selSports.has(val)?selSports.delete(val):selSports.add(val);
+  el.classList.toggle('active',selSports.has(val));
+  document.getElementById('fsports').value=Array.from(selSports).join(',');
+  var other=document.getElementById('fsportother');
+  var lang=document.body.getAttribute('data-lang')||'en';
+  if(selSports.has('otro')){
+    other.style.display='block';
+    other.placeholder=lang==='en'?'Which other sports?':'¿Qué otros deportes?';
+  }else{
+    other.style.display='none';
+    other.value='';
+  }
+}
 var selTimes=new Set();
 function toggleTime(el,val){
   selTimes.has(val)?selTimes.delete(val):selTimes.add(val);
@@ -84,6 +93,9 @@ async function submitForm(e){
   var experience=document.getElementById('fexp').value;
   var free_days=document.getElementById('fdays').value;
   var time_preference=document.getElementById('ftimes').value;
+  var sports=document.getElementById('fsports').value;
+  var sportOther=document.getElementById('fsportother').value.trim();
+  if(sportOther) sports = sports ? sports+',otro:'+sportOther : 'otro:'+sportOther;
   
   // Clear any previous error messages
   document.querySelectorAll('.form-error-msg').forEach(el => el.remove());
@@ -130,16 +142,27 @@ async function submitForm(e){
       headers:{
         'Content-Type':'application/json'
       },
-      body:JSON.stringify({name:name,whatsapp:whatsapp,email:email,experience:experience,free_days:free_days,time_preference:time_preference})
+      body:JSON.stringify({name:name,whatsapp:whatsapp,email:email,experience:experience,free_days:free_days,time_preference:time_preference,sports:sports})
     });
     if(res.ok||res.status===201){
       document.getElementById('signupForm').style.display='none';
       document.getElementById('successState').style.display='block';
     }else{
-      throw new Error('Network error');
+      var errData = await res.json().catch(function(){ return {}; });
+      var detail = errData.details || errData.error || ('HTTP '+res.status);
+      throw new Error(detail);
     }
   }catch(err){
     btn.disabled=false;
     btn.innerHTML='<span class="en">Try Again →</span><span class="es">Intentar de Nuevo →</span>';
+    var errBox=document.createElement('div');
+    errBox.className='form-error-msg';
+    errBox.style.color='#ff6b6b';
+    errBox.style.fontSize='12px';
+    errBox.style.marginTop='10px';
+    errBox.style.textAlign='center';
+    errBox.style.wordBreak='break-word';
+    errBox.textContent=(lang==='en'?'Something went wrong: ':'Algo salió mal: ')+err.message;
+    btn.parentNode.appendChild(errBox);
   }
 }
