@@ -26,6 +26,10 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1375770241134163');
 fbq('track', 'PageView');
+function track(id){
+  try{ if(typeof gtag==='function') gtag('event','cta_click',{cta_location:id}); }catch(e){}
+  try{ if(typeof fbq==='function') fbq('trackCustom','CTAClick',{location:id}); }catch(e){}
+}
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1375770241134163&ev=PageView&noscript=1"
@@ -47,7 +51,7 @@ src="https://www.facebook.com/tr?id=1375770241134163&ev=PageView&noscript=1"
 </nav>
 
 <!-- TAGLINE BAR -->
-<a href="#signup" class="tagline-bar">
+<a href="#signup" class="tagline-bar" onclick="track('top_bar')">
   <span class="en">WANT TO PLAY THE FASTEST GROWING SPORT IN THE WORLD? →</span>
   <span class="es">¿QUIERES JUGAR EL DEPORTE DE MÁS RÁPIDO CRECIMIENTO? →</span>
 </a>
@@ -55,24 +59,24 @@ src="https://www.facebook.com/tr?id=1375770241134163&ev=PageView&noscript=1"
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="slides-wrap" id="slidesWrap">
-    <div class="slide slide-1 active" style="background-image:url('images/xmas.jpg')">
+    <div class="slide slide-1 active" style="background-image:url('images/image-1.jpg')"></div>
+    <div class="slide slide-xmas" style="background-image:url('images/xmas.jpg')">
       <div class="slide-overlay-light">
         <p class="slide-caption en">What happens when mountain village kids<br><strong>taste 600+ Vietnamese tequeños & play pickleball</strong> for the first time on Christmas?</p>
         <p class="slide-caption es">¿Qué pasa cuando niños de la montaña<br><strong>prueban 600+ tequeños vietnamitas & juegan pickleball</strong> por primera vez en Navidad?</p>
         <div class="slide-social-btns">
-          <a href="https://www.instagram.com/pickleballintheclouds" target="_blank" class="btn-social-slide">
+          <a href="https://www.instagram.com/pickleballintheclouds" target="_blank" class="btn-social-slide" onclick="track('ig_slide')">
             <svg viewBox="0 0 24 24" width="20" height="20"><defs><radialGradient id="ig2" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="50%" stop-color="#fd5949"/><stop offset="68%" stop-color="#d6249f"/><stop offset="100%" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="6" fill="url(#ig2)"/><rect x="6" y="6" width="12" height="12" rx="3.5" fill="none" stroke="#fff" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="#fff" stroke-width="1.5"/><circle cx="16.2" cy="7.8" r="0.9" fill="#fff"/></svg>
             <span class="en">See on Instagram</span>
             <span class="es">Ver en Instagram</span>
           </a>
-          <a href="https://www.facebook.com/Pickleballintheclouds" target="_blank" class="btn-social-slide">
+          <a href="https://www.facebook.com/Pickleballintheclouds" target="_blank" class="btn-social-slide" onclick="track('fb_slide')">
             <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="12" fill="#1877F2"/><path d="M13.2 19v-6.3h2.1l.3-2.5h-2.4v-1.5c0-.7.2-1.2 1.2-1.2h1.3V5.1c-.2 0-1-.1-1.9-.1-1.9 0-3.1 1.1-3.1 3.2v1.9H8.3v2.5h2.4V19z" fill="#fff"/></svg>
             <span>Facebook</span>
           </a>
         </div>
       </div>
     </div>
-    <div class="slide slide-2" style="background-image:url('images/image-1.jpg')"></div>
     <div class="slide slide-3" style="background-image:url('images/image-2.jpg')"></div>
     <div class="slide slide-4" style="background-image:url('images/image-3.jpg')"></div>
     <div class="slide slide-5" style="background-image:url('images/paddles.jpg')"></div>
@@ -83,44 +87,44 @@ src="https://www.facebook.com/tr?id=1375770241134163&ev=PageView&noscript=1"
   <button class="carousel-arrow arrow-prev" onclick="prevSlide()" aria-label="Previous">&#8249;</button>
   <button class="carousel-arrow arrow-next" onclick="nextSlide()" aria-label="Next">&#8250;</button>
 
+  <div class="hero-top" id="heroTop">
+    <h1 class="hero-headline">
+      <span class="en">If You Can Toss a Ball,<br><span class="teal-word">You Can Play.</span></span>
+      <span class="es">Si Puedes Lanzar una Pelota,<br><span class="teal-word">Puedes Jugar.</span></span>
+    </h1>
+    <p class="hero-sub">
+      <span class="en">Playing & laughing in 20 minutes.<br>No experience needed.</span>
+      <span class="es">Jugando y riendo en 20 minutos.<br>Sin experiencia.</span>
+    </p>
+  </div>
+
   <div class="hero-text" id="heroText">
-    <a href="#signup" class="btn-hero" id="heroBtn">
+    <div class="dots-row" id="dotsWrap"><button class="dot active" onclick="goTo(0)" aria-label="Go to slide 1"></button><button class="dot" onclick="goTo(1)" aria-label="Go to slide 2"></button><button class="dot" onclick="goTo(2)" aria-label="Go to slide 3"></button><button class="dot" onclick="goTo(3)" aria-label="Go to slide 4"></button><button class="dot" onclick="goTo(4)" aria-label="Go to slide 5"></button></div>
+    <a href="#signup" class="hero-cta-bar" id="heroBtn" onclick="track('hero')">
       <span class="en">I Want to Try It →</span>
       <span class="es">Quiero Probarlo →</span>
     </a>
-    <div class="dots-row" id="dotsWrap"><button class="dot active" onclick="goTo(0)" aria-label="Go to slide 1"></button><button class="dot" onclick="goTo(1)" aria-label="Go to slide 2"></button><button class="dot" onclick="goTo(2)" aria-label="Go to slide 3"></button><button class="dot" onclick="goTo(3)" aria-label="Go to slide 4"></button><button class="dot" onclick="goTo(4)" aria-label="Go to slide 5"></button></div>
   </div>
 </section>
-
-<div style="background:#f5eed8; padding:18px 24px; text-align:center; border-bottom:1px solid rgba(0,0,0,0.08);">
-  <p style="margin:0; font-family:'Bebas Neue',sans-serif; font-size:24px; color:#1a2e35; letter-spacing:0.1em;">
-    <span class="en">SOCIALIZE. MOVE. PLAY.</span>
-    <span class="es">SOCIALIZA. MUÉVETE. JUEGA.</span>
-  </p>
-</div>
 
 <hr class="divider">
 
 <!-- WHAT IS PICKLEBALL -->
 <section class="section" id="what">
-  <span class="section-label en">What is Pickleball?</span>
-  <span class="section-label es">¿Qué es el Pickleball?</span>
-  <h2 class="section-title en">Easy to Learn.<br>Hard to Stop.</h2>
-  <h2 class="section-title es">Fácil de Aprender.<br>Difícil de Parar.</h2>
-  <p class="what-text en">Tennis meets ping pong — a paddle, a wiffle ball and a small court. Low impact, easy on the body — and seriously addictive. Pick it up in minutes and play real points the same day.</p>
-  <p class="what-text es">Tenis con ping pong — una paleta, una pelota perforada y una cancha pequeña. De bajo impacto, suave con el cuerpo — y seriamente adictivo. Lo aprendes en minutos y juegas el mismo día.</p>
+  <span class="section-label en">Why Pickleball?</span>
+  <span class="section-label es">¿Por qué Pickleball?</span>
+  <h2 class="section-title en">The Easiest Racquet<br>Sport in the World.</h2>
+  <h2 class="section-title es">El Deporte de Raqueta<br>Más Fácil del Mundo.</h2>
+  <p class="what-text en">Tennis meets ping pong on a small court — but way easier than both. No experience, no gear, no problem: you'll be playing real games — and laughing through them — within 30 minutes.</p>
+  <p class="what-text es">Tenis con ping pong en una cancha pequeña — pero mucho más fácil que ambos. Sin experiencia, sin equipo, sin problema: jugarás partidos reales — riéndote todo el rato — en menos de 30 minutos.</p>
   <div class="quick-hits">
     <div class="qh"><div class="qh-icon">🎯</div><div class="qh-label en">First-Timers Welcome</div><div class="qh-label es">Primera Vez</div></div>
     <div class="qh"><div class="qh-icon">⚡</div><div class="qh-label en">Playing in Minutes</div><div class="qh-label es">Jugando en Minutos</div></div>
     <div class="qh"><div class="qh-icon">😂</div><div class="qh-label en">Instantly Fun</div><div class="qh-label es">Diversión al Instante</div></div>
   </div>
   <div class="laughs-bar">
-    <span class="en">😄 Most games end in laughs — win or lose</span>
-    <span class="es">😄 Casi todos los juegos terminan en risas — ganes o pierdas</span>
-  </div>
-  <div class="social-proof">
-    <span class="en">🏓 Join 70+ members (and growing) in our Sacred Valley community</span>
-    <span class="es">🏓 Únete a más de 70 miembros (y creciendo) en nuestra comunidad del Valle Sagrado</span>
+    <span class="en">😄 You can lose every game — and still can't stop thinking about your next session.<br><strong>That's pickleball.</strong></span>
+    <span class="es">😄 Puedes perder todos los partidos — y aún así no dejas de pensar en tu próxima sesión.<br><strong>Así es el pickleball.</strong></span>
   </div>
 </section>
 
@@ -129,26 +133,25 @@ src="https://www.facebook.com/tr?id=1375770241134163&ev=PageView&noscript=1"
 <!-- SESSIONS -->
 <div class="sessions-bg" id="sessions">
   <div class="sessions-inner">
-    <span class="section-label en">Sessions</span>
-    <span class="section-label es">Sesiones</span>
+    <span class="section-label en">The Sessions</span>
+    <span class="section-label es">Las Sesiones</span>
     <h2 class="section-title en">Every Thursday or Saturday</h2>
     <h2 class="section-title es">Cada Jueves o Sábado</h2>
     <div class="session-card">
       <div class="session-header">
-        <div class="session-day"><span class="en">THU<br>SAT</span><span class="es">JUE<br>SÁB</span></div>
         <div class="session-when">
           <span class="session-recurring en">Weekly</span>
           <span class="session-recurring es">Semanal</span>
           <div class="session-time">10:00 AM — 12:00 PM</div>
           <div class="session-loc">
-            <a href="https://maps.app.goo.gl/RBADgs5QPrM97pjN8" target="_blank" style="color:inherit; text-decoration:underline; text-underline-offset:3px;">📍 Huycho, Valle Sagrado</a>
-            <a href="https://maps.app.goo.gl/RBADgs5QPrM97pjN8" target="_blank" style="display:inline-block; margin-left:8px; font-size:11px; color:var(--teal); font-weight:700; text-decoration:none;"><span class="en">Get directions →</span><span class="es">Cómo llegar →</span></a>
+            <a href="https://maps.app.goo.gl/RBADgs5QPrM97pjN8" target="_blank" style="color:inherit; text-decoration:underline; text-underline-offset:3px;" onclick="track('map_session_card')">📍 Huycho, Valle Sagrado</a>
+            <a href="https://maps.app.goo.gl/RBADgs5QPrM97pjN8" target="_blank" style="display:inline-block; margin-left:8px; font-size:11px; color:var(--teal); font-weight:700; text-decoration:none;" onclick="track('map_directions')"><span class="en">Get directions →</span><span class="es">Cómo llegar →</span></a>
           </div>
         </div>
       </div>
       <div class="session-body">
-        <p class="session-note en">First 20 min: Quick intro to rules, gameplay, and technique — you'll be playing within minutes, no experience needed.<br><br>Then: <strong>live play</strong> — real games with coaching tips and adjustments as you go.</p>
-        <p class="session-note es">Primeros 20 min: Intro rápida a las reglas, el juego y la técnica — estarás jugando en minutos, sin experiencia necesaria.<br><br>Después: <strong>juego en vivo</strong> — partidos reales con consejos y ajustes mientras juegas.</p>
+        <p class="session-note en">First-timers get a quick intro to rules and technique — you'll be playing within 20 minutes.<br><br>Then: <strong>guided games</strong> — rotating partners, real points, tips from Coach Kiet between games. Everyone plays, everyone laughs.</p>
+        <p class="session-note es">Si es tu primera vez, recibes una intro rápida a las reglas y la técnica — estarás jugando en 20 minutos.<br><br>Después: <strong>juegos guiados</strong> — rotando parejas, puntos reales, consejos de Coach Kiet entre partidos. Todos juegan, todos ríen.</p>
       </div>
     </div>
 
@@ -158,30 +161,33 @@ src="https://www.facebook.com/tr?id=1375770241134163&ev=PageView&noscript=1"
       <p class="es" style="margin:0; font-size:14px; line-height:1.7; color:var(--navy);">⛰️ <strong>Juega a 3,000m</strong> en el Valle Sagrado, Cusco. El aire cambia todo — velocidades distintas, dinámicas únicas, diferente a cualquier otro lugar del planeta.</p>
     </div>
 
-    <!-- WHAT YOU GET -->
+    <!-- PRICING: FIRST SESSION VALUE STACK -->
     <span class="section-label" style="margin-top:28px;display:block;">
-      <span class="en">What You Get</span>
-      <span class="es">Qué Incluye</span>
+      <span class="en">Your First Session</span>
+      <span class="es">Tu Primera Sesión</span>
     </span>
-    <ul class="provide-list">
-      <li><span class="check">✓</span><span class="en">Real-time coaching tips on the court</span><span class="es">Consejos de coaching en tiempo real</span></li>
-      <li><span class="check">✓</span><span class="en">Beginner-friendly — everyone starts here, everyone improves</span><span class="es">Para principiantes — todos empiezan aquí, todos mejoran</span></li>
-      <li><span class="check">✓</span><span class="en">Small groups = more personal attention</span><span class="es">Grupos pequeños = más atención personalizada</span></li>
-      <li><span class="check">✓</span><span class="en">Play with locals & travelers — great people, good vibes</span><span class="es">Juega con locales y viajeros — buena gente, buen ambiente</span></li>
-      <li><span class="check">✓</span><span class="en">Premium USA paddles & gear — quality equipment makes the game easier and more fun</span><span class="es">Paletas y equipo premium de USA — el buen equipo hace el juego más fácil y divertido</span></li>
-      <li><span class="check">❤️</span><span class="en">Your visit supports local kids & indigenous families through pickleball & Vietnamese food</span><span class="es">Tu visita apoya a niños locales y familias indígenas con pickleball y comida vietnamita</span></li>
-    </ul>
-
-    <!-- PRICING TIERS -->
-    <span class="section-label" style="margin-top:28px;display:block;">
-      <span class="en">Pricing</span>
-      <span class="es">Precios</span>
-    </span>
-    <div class="pricing-highlight">
-      <span class="en">⏱ 2 Hours · All Equipment Included</span>
-      <span class="es">⏱ 2 Horas · Todo el Equipo Incluido</span>
+    <div class="dropin-hero">
+      <div class="dropin-price-row">
+        <div class="dropin-amount">S/ 30</div>
+        <div class="dropin-includes">
+          <span class="en">2 hours<br>Everything included.<br>Just show up.</span>
+          <span class="es">2 horas<br>Todo incluido.<br>Solo ven.</span>
+        </div>
+      </div>
+      <ul class="dropin-list">
+        <li><span class="en">✓ 2 full hours of play</span><span class="es">✓ 2 horas completas de juego</span></li>
+        <li><span class="en">✓ First-timer intro + tips from Coach Kiet</span><span class="es">✓ Intro para principiantes + consejos de Coach Kiet</span></li>
+        <li><span class="en">✓ Guided games — rotating partners, everyone plays</span><span class="es">✓ Juegos guiados — rotando parejas, todos juegan</span></li>
+        <li><span class="en">✓ Premium USA paddles & balls provided — bring nothing</span><span class="es">✓ Paletas y pelotas premium de USA — no traigas nada</span></li>
+      </ul>
     </div>
-    <div class="pricing-grid">
+
+    <!-- PACKS -->
+    <span class="section-label" style="margin-top:26px;display:block;">
+      <span class="en">Hooked? Play More, Pay Less</span>
+      <span class="es">¿Te Enganchó? Juega Más, Paga Menos</span>
+    </span>
+    <div class="pricing-grid pricing-grid-2">
       <div class="price-card price-card-best">
         <div class="price-card-badge en">BEST VALUE · 20% OFF</div>
         <div class="price-card-badge es">MEJOR PRECIO · 20% DTO</div>
@@ -190,8 +196,9 @@ src="https://www.facebook.com/tr?id=1375770241134163&ev=PageView&noscript=1"
         <div class="price-card-amount">S/ 24</div>
         <div class="price-card-per en">per session</div>
         <div class="price-card-per es">por sesión</div>
-        <div class="price-card-note en">Save S/48</div>
-        <div class="price-card-note es">Ahorra S/48</div>
+        <div class="price-card-total"><s>S/ 240</s> S/ 192</div>
+        <div class="price-card-note en">⭐ Priority spot when sessions fill up</div>
+        <div class="price-card-note es">⭐ Cupo prioritario cuando se llenan las sesiones</div>
       </div>
       <div class="price-card">
         <div class="price-card-badge badge-teal en">10% OFF</div>
@@ -201,22 +208,14 @@ src="https://www.facebook.com/tr?id=1375770241134163&ev=PageView&noscript=1"
         <div class="price-card-amount">S/ 27</div>
         <div class="price-card-per en">per session</div>
         <div class="price-card-per es">por sesión</div>
+        <div class="price-card-total"><s>S/ 120</s> S/ 108</div>
         <div class="price-card-note en">Save S/12</div>
         <div class="price-card-note es">Ahorra S/12</div>
       </div>
-      <div class="price-card">
-        <div class="price-card-name en">Drop-in</div>
-        <div class="price-card-name es">Clase Suelta</div>
-        <div class="price-card-amount">S/ 30</div>
-        <div class="price-card-per en">per session</div>
-        <div class="price-card-per es">por sesión</div>
-        <div class="price-card-note en">2 hours · all equipment</div>
-        <div class="price-card-note es">2 horas · todo el equipo</div>
-      </div>
     </div>
-    <p style="text-align:center; margin-top:14px; font-family:'Bebas Neue',cursive; font-size:20px; color:var(--teal-dark); letter-spacing:0.05em;">
-      <span class="en">⭐ As low as S/12<small style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;">/hr</small></span>
-      <span class="es">⭐ Desde S/12<small style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;">/hr</small></span>
+    <p class="pricing-highlight" style="display:block; text-align:center; margin:14px 0 0;">
+      <span class="en">⭐ Packages from S/12 an hour —<br>less than a café visit</span>
+      <span class="es">⭐ Paquetes desde S/12 la hora —<br>menos que una visita al café</span>
     </p>
 
     <!-- PRIVATE COACHING -->
@@ -226,13 +225,13 @@ src="https://www.facebook.com/tr?id=1375770241134163&ev=PageView&noscript=1"
         <span class="es">Clases Privadas</span>
       </span>
 
-      <p class="what-text" style="margin-bottom:14px; color:rgba(255,255,255,0.95);">
-        <span class="en">Feeling stuck at the same level? Hitting into the net, sending it out, getting slammed on — and not sure why? One focused session changes more than months of live play. Dedicated drilling, intentional shots, and real feedback — so your rallies get longer, your confidence grows, and the game gets a whole lot more fun.</span>
-        <span class="es">¿Estancado en el mismo nivel? ¿A la red, afuera, te rematan — y no sabes por qué? Una sesión enfocada cambia más que meses de juego en grupo. Drills dedicados, tiros intencionales y feedback real — para que tus rallies sean más largos, tu confianza crezca y el juego sea mucho más divertido.</span>
+      <p class="what-text" style="margin-bottom:18px; color:rgba(255,255,255,0.95);">
+        <span class="en">Feeling stuck at the same level? Hitting into the net, sending it out, getting slammed on — and not sure why?<br><br>One focused session changes more than months of live play. Dedicated drilling, intentional shots, and real feedback — so your rallies get longer, your confidence grows, and the game gets a whole lot more fun.</span>
+        <span class="es">¿Estancado en el mismo nivel? ¿A la red, afuera, te rematan — y no sabes por qué?<br><br>Una sesión enfocada cambia más que meses de juego en grupo. Drills dedicados, tiros intencionales y feedback real — para que tus rallies sean más largos, tu confianza crezca y el juego sea mucho más divertido.</span>
       </p>
 
       <!-- TESTIMONIAL -->
-      <div style="background:#fff; border-radius:12px; padding:14px 18px; margin-bottom:14px;">
+      <div style="background:#fff; border-radius:12px; padding:16px 18px; margin-bottom:0;">
         <p style="margin:0 0 6px; color:var(--navy); font-size:14px; font-style:italic; line-height:1.6;">
           <span class="en">"I learned more in one session than in a whole year of recreational play."</span>
           <span class="es">"Aprendí más en una sesión que en todo un año jugando recreativamente."</span>
@@ -246,8 +245,8 @@ src="https://www.facebook.com/tr?id=1375770241134163&ev=PageView&noscript=1"
       <!-- FIRST SESSION SPECIAL -->
       <div class="coach-trial">
         <div class="coach-trial-badge-wrap">
-          <div class="coach-trial-badge en">🎉 50% OFF FIRST SESSION</div>
-          <div class="coach-trial-badge es">🎉 50% DTO PRIMERA SESIÓN</div>
+          <div class="coach-trial-badge en">50% OFF FIRST LESSON</div>
+          <div class="coach-trial-badge es">50% DTO PRIMERA CLASE</div>
         </div>
         <div class="coach-trial-inner">
           <div style="text-align:center;">
@@ -271,8 +270,8 @@ src="https://www.facebook.com/tr?id=1375770241134163&ev=PageView&noscript=1"
       </div>
 
       <!-- GROUP COACHING -->
-      <div style="margin:14px 0 10px; padding:14px; background:rgba(255,255,255,0.1); border-radius:10px;">
-        <p style="margin:0 0 4px; color:#fff; font-size:14px; font-weight:700;">
+      <div style="margin:18px 0; padding:16px; background:rgba(255,255,255,0.1); border-radius:10px;">
+        <p style="margin:0 0 6px; color:#fff; font-size:14px; font-weight:700;">
           <span class="en">👥 More fun with friends — group coaching available</span>
           <span class="es">👥 Más divertido con amigos — coaching grupal disponible</span>
         </p>
@@ -296,28 +295,54 @@ src="https://www.facebook.com/tr?id=1375770241134163&ev=PageView&noscript=1"
       </div>
 
       <!-- WA CTA -->
-      <a href="https://wa.me/17144785438" target="_blank" onclick="fbq('track','Contact');" style="display:flex; align-items:center; justify-content:center; gap:10px; margin-top:16px; padding:14px; background:#25D366; border-radius:12px; text-decoration:none; color:#fff; font-weight:700; font-size:15px;">
+      <a href="https://wa.me/17144785438" target="_blank" onclick="fbq('track','Contact'); track('coach_wa_chat')" style="display:flex; align-items:center; justify-content:center; gap:10px; margin-top:18px; padding:14px; background:#25D366; border-radius:12px; text-decoration:none; color:#fff; font-weight:700; font-size:15px;">
         <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="12" fill="#fff" opacity="0.2"/><path fill="#fff" d="M12 4.2C7.7 4.2 4.2 7.7 4.2 12c0 1.4.4 2.7 1 3.9L4 20l4.2-1.1c1.1.6 2.4.9 3.8.9 4.3 0 7.8-3.5 7.8-7.8S16.3 4.2 12 4.2zm4.6 10.8c-.2.5-1 1-1.5 1.1-.4.1-.9.1-1.4-.1-.3-.1-.7-.2-1.2-.5-2.1-1-3.5-3.1-3.6-3.3-.1-.2-1-1.3-1-2.5s.6-1.8.8-2c.2-.2.5-.3.6-.3h.5c.1 0 .3 0 .5.4.2.4.7 1.6.7 1.7.1.1.1.3 0 .4-.1.2-.1.3-.3.4-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1.8.7 1.6 1 1.8 1.1.2.1.4.1.5-.1.2-.2.6-.7.8-.9.2-.2.3-.2.5-.1l1.6.8c.2.1.4.2.4.3.1.2 0 .9-.2 1.3z"/></svg>
-        <span class="en">Chat with Coach Kiet for more info</span>
-        <span class="es">Habla con Coach Kiet para más info</span>
+        <span class="en coach-wa-text">Chat with Coach Kiet<br>for more info</span>
+        <span class="es coach-wa-text">Habla con Coach Kiet<br>para más info</span>
       </a>
     </div>
 
-    <!-- FIRST TIMER NOTE + MID-PAGE CTA -->
-    <div class="first-timer-box">
-      <p class="first-timer-text">
-        <span class="en"><strong>First time?</strong> Just show up — S/30 covers everything: intro, coaching tips, 2 hours of play, and all equipment. Zero experience needed.</span>
-        <span class="es"><strong>¿Primera vez?</strong> Solo ven — S/30 incluye todo: intro, consejos, 2 horas de juego y todo el equipo. Cero experiencia necesaria.</span>
-      </p>
-      <a href="#signup" class="btn-hero" style="margin-top:14px; display:inline-block;">
-        <span class="en">I Want to Try It →</span>
-        <span class="es">Quiero Probarlo →</span>
+    <!-- THE PLAN + MID-PAGE CTA -->
+    <div style="margin-top:36px;">
+      <span class="section-label en">The Plan</span>
+      <span class="section-label es">El Plan</span>
+      <h2 class="section-title en">Playing in 3 Easy Steps</h2>
+      <h2 class="section-title es">Juega en 3 Simples Pasos</h2>
+      <div class="quick-hits">
+        <a href="https://chat.whatsapp.com/DmrSc15uGyBJvFoFaLVNeZ" target="_blank" class="qh qh-link" onclick="track('plan_step1_group')"><div class="qh-icon">📱</div><div class="qh-label en">Join the WhatsApp<br>Group Now →</div><div class="qh-label es">Únete al Grupo de<br>WhatsApp Ya →</div></a>
+        <div class="qh"><div class="qh-icon">📍</div><div class="qh-label en">Show Up — Thu or Sat, 10AM</div><div class="qh-label es">Ven — Jue o Sáb, 10AM</div></div>
+        <div class="qh"><div class="qh-icon">🏓</div><div class="qh-label en">You're Playing in 20 Min</div><div class="qh-label es">Jugando en 20 Min</div></div>
+      </div>
+      <a href="https://chat.whatsapp.com/DmrSc15uGyBJvFoFaLVNeZ" target="_blank" class="social-proof" style="display:block; text-decoration:none; cursor:pointer;" onclick="track('social_proof_group')">
+        <span class="en">🏓 Join 70+ members (and growing) in our Sacred Valley community →</span>
+        <span class="es">🏓 Únete a más de 70 miembros (y creciendo) en nuestra comunidad del Valle Sagrado →</span>
       </a>
+      <div style="text-align:center; margin-top:20px;">
+        <a href="#signup" class="btn-hero" style="display:inline-block;" onclick="track('plan_button')">
+          <span class="en">I Want to Try It →</span>
+          <span class="es">Quiero Probarlo →</span>
+        </a>
+        <p style="margin:16px 0 0; font-size:13px; color:var(--text-mid);">
+          <span class="en">❤️ Every session helps bring pickleball + Vietnamese food events to local kids & families.</span>
+          <span class="es">❤️ Cada sesión ayuda a llevar pickleball + eventos de comida vietnamita a niños y familias locales.</span>
+        </p>
+      </div>
     </div>
   </div>
 </div>
 
 <hr class="divider">
+
+<div style="background:#f5eed8; padding:24px 24px; text-align:center;">
+  <p style="margin:0; font-family:'Bebas Neue',sans-serif; font-size:28px; color:#1a2e35; letter-spacing:0.1em;">
+    <span class="en">SOCIALIZE. MOVE. PLAY.</span>
+    <span class="es">SOCIALIZA. MUÉVETE. JUEGA.</span>
+  </p>
+  <p style="margin:8px 0 0; font-size:14px; color:#4a5a60; font-weight:600;">
+    <span class="en">More energy. New friends. Exercise that doesn't feel like exercise — under the apus of the Sacred Valley.</span>
+    <span class="es">Más energía. Nuevos amigos. Ejercicio que no se siente como ejercicio — bajo los apus del Valle Sagrado.</span>
+  </p>
+</div>
 
 <!-- FORM -->
 <div class="form-wrap" id="signup">
@@ -325,17 +350,17 @@ src="https://www.facebook.com/tr?id=1375770241134163&ev=PageView&noscript=1"
     <h2 class="section-title en" style="text-align:center;">See When We Play</h2>
     <h2 class="section-title es" style="text-align:center;">Ver Cuándo Jugamos</h2>
     <p style="font-size:14px; color:rgba(255,255,255,0.9); text-align:center; margin-bottom:24px; margin-top:8px; line-height:1.6;">
-      <span class="en">Live schedule, games & updates — all in the group with 70+ members.</span>
-      <span class="es">Horarios en vivo, juegos y novedades — todo en el grupo con más de 70 miembros.</span>
+      <span class="en">Live schedule, games & updates — all in the group.</span>
+      <span class="es">Horarios en vivo, juegos y novedades — todo en el grupo.</span>
     </p>
 
     <div style="display:flex; flex-direction:column; gap:14px; align-items:center;">
-      <a href="https://chat.whatsapp.com/DmrSc15uGyBJvFoFaLVNeZ" target="_blank" onclick="fbq('track', 'Lead');" style="display:inline-flex; align-items:center; justify-content:center; gap:10px; background:#25D366; color:#fff; padding:18px 36px; border-radius:12px; text-decoration:none; font-weight:800; font-size:17px; width:100%; max-width:380px; box-shadow:0 4px 16px rgba(37,211,102,0.35);">
+      <a href="https://chat.whatsapp.com/DmrSc15uGyBJvFoFaLVNeZ" target="_blank" onclick="fbq('track', 'Lead'); track('bottom_join_group')" style="display:inline-flex; align-items:center; justify-content:center; gap:10px; background:#25D366; color:#fff; padding:18px 36px; border-radius:12px; text-decoration:none; font-weight:800; font-size:17px; width:100%; max-width:380px; box-shadow:0 4px 16px rgba(37,211,102,0.35);">
         <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="12" fill="#fff" opacity="0.2"/><path fill="#fff" d="M12 4.2C7.7 4.2 4.2 7.7 4.2 12c0 1.4.4 2.7 1 3.9L4 20l4.2-1.1c1.1.6 2.4.9 3.8.9 4.3 0 7.8-3.5 7.8-7.8S16.3 4.2 12 4.2zm4.6 10.8c-.2.5-1 1-1.5 1.1-.4.1-.9.1-1.4-.1-.3-.1-.7-.2-1.2-.5-2.1-1-3.5-3.1-3.6-3.3-.1-.2-1-1.3-1-2.5s.6-1.8.8-2c.2-.2.5-.3.6-.3h.5c.1 0 .3 0 .5.4.2.4.7 1.6.7 1.7.1.1.1.3 0 .4-.1.2-.1.3-.3.4-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1.8.7 1.6 1 1.8 1.1.2.1.4.1.5-.1.2-.2.6-.7.8-.9.2-.2.3-.2.5-.1l1.6.8c.2.1.4.2.4.3.1.2 0 .9-.2 1.3z"/></svg>
-        <span class="en">Join the WhatsApp Group →</span>
-        <span class="es">Únete al Grupo de WhatsApp →</span>
+        <span class="en">Join the WhatsApp Group Now →</span>
+        <span class="es">Únete al Grupo de WhatsApp Ya →</span>
       </a>
-      <a href="https://wa.me/17144785438" target="_blank" onclick="fbq('track', 'Contact');" style="display:inline-flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:transparent; color:#fff; padding:14px 28px; border-radius:12px; text-decoration:none; font-weight:600; font-size:14px; width:100%; max-width:380px; border:1.5px solid rgba(255,255,255,0.4);">
+      <a href="https://wa.me/17144785438" target="_blank" onclick="fbq('track', 'Contact'); track('bottom_wa_chat')" style="display:inline-flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:transparent; color:#fff; padding:14px 28px; border-radius:12px; text-decoration:none; font-weight:600; font-size:14px; width:100%; max-width:380px; border:1.5px solid rgba(255,255,255,0.4);">
         <span class="en">👋 Prefer to message first?</span>
         <span class="en" style="font-size:15px; font-weight:700;">Chat with Coach Kiet</span>
         <span class="es">👋 ¿Prefieres escribir primero?</span>
@@ -347,22 +372,22 @@ src="https://www.facebook.com/tr?id=1375770241134163&ev=PageView&noscript=1"
       <span class="en">No commitment — just come try it 🏓</span>
       <span class="es">Sin compromiso — solo ven a probarlo 🏓</span>
     </p>
-    <p class="coaching-nudge en">Making the same mistakes every class? <a href="#coaching" style="color:#6ecad8; text-decoration:underline; text-underline-offset:3px;">Private coaching</a> gets you playing better, faster.</p>
-    <p class="coaching-nudge es">¿Cometiendo los mismos errores en cada sesión? <a href="#coaching" style="color:#6ecad8; text-decoration:underline; text-underline-offset:3px;">Las clases privadas</a> te ayudan a mejorar más rápido.</p>
+    <p class="coaching-nudge en">Making the same mistakes every session?<br><a href="#coaching" style="color:#6ecad8; text-decoration:underline; text-underline-offset:3px;" onclick="track('coaching_nudge')">Private coaching</a> gets you playing better, faster.</p>
+    <p class="coaching-nudge es">¿Cometiendo los mismos errores en cada sesión?<br><a href="#coaching" style="color:#6ecad8; text-decoration:underline; text-underline-offset:3px;" onclick="track('coaching_nudge')">Las clases privadas</a> te ayudan a mejorar más rápido.</p>
   </div>
 </div>
 
 <footer>
   <div class="footer-name">Pickleball in the Clouds</div>
-  <div class="footer-tag"><a href="https://maps.app.goo.gl/RBADgs5QPrM97pjN8" target="_blank" style="color:inherit; text-decoration:underline; text-underline-offset:3px;">📍 Huycho · Sacred Valley · Peru</a></div>
+  <div class="footer-tag"><a href="https://maps.app.goo.gl/RBADgs5QPrM97pjN8" target="_blank" style="color:inherit; text-decoration:underline; text-underline-offset:3px;" onclick="track('map_footer')">📍 Huycho · Sacred Valley · Peru</a></div>
   <div class="footer-links">
-    <a href="https://wa.me/17144785438" target="_blank" class="footer-icon-link" title="WhatsApp">
+    <a href="https://wa.me/17144785438" target="_blank" class="footer-icon-link" title="WhatsApp" onclick="track('wa_footer')">
       <svg viewBox="0 0 24 24" width="36" height="36" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#25D366"/><path fill="#fff" d="M12 4.2C7.7 4.2 4.2 7.7 4.2 12c0 1.4.4 2.7 1 3.9L4 20l4.2-1.1c1.1.6 2.4.9 3.8.9 4.3 0 7.8-3.5 7.8-7.8S16.3 4.2 12 4.2zm4.6 10.8c-.2.5-1 1-1.5 1.1-.4.1-.9.1-1.4-.1-.3-.1-.7-.2-1.2-.5-2.1-1-3.5-3.1-3.6-3.3-.1-.2-1-1.3-1-2.5s.6-1.8.8-2c.2-.2.5-.3.6-.3h.5c.1 0 .3 0 .5.4.2.4.7 1.6.7 1.7.1.1.1.3 0 .4-.1.2-.1.3-.3.4-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1.8.7 1.6 1 1.8 1.1.2.1.4.1.5-.1.2-.2.6-.7.8-.9.2-.2.3-.2.5-.1l1.6.8c.2.1.4.2.4.3.1.2 0 .9-.2 1.3z"/></svg>
     </a>
-    <a href="https://www.instagram.com/pickleballintheclouds" target="_blank" class="footer-icon-link" title="Instagram">
+    <a href="https://www.instagram.com/pickleballintheclouds" target="_blank" class="footer-icon-link" title="Instagram" onclick="track('ig_footer')">
       <svg viewBox="0 0 24 24" width="36" height="36" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="ig" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="10%" stop-color="#fdf497"/><stop offset="50%" stop-color="#fd5949"/><stop offset="68%" stop-color="#d6249f"/><stop offset="100%" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="6" fill="url(#ig)"/><rect x="6" y="6" width="12" height="12" rx="3.5" fill="none" stroke="#fff" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="#fff" stroke-width="1.5"/><circle cx="16.2" cy="7.8" r="0.9" fill="#fff"/></svg>
     </a>
-    <a href="https://www.facebook.com/Pickleballintheclouds" target="_blank" class="footer-icon-link" title="Facebook">
+    <a href="https://www.facebook.com/Pickleballintheclouds" target="_blank" class="footer-icon-link" title="Facebook" onclick="track('fb_footer')">
       <svg viewBox="0 0 24 24" width="36" height="36" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#1877F2"/><path d="M13.2 19v-6.3h2.1l.3-2.5h-2.4v-1.5c0-.7.2-1.2 1.2-1.2h1.3V5.1c-.2 0-1-.1-1.9-.1-1.9 0-3.1 1.1-3.1 3.2v1.9H8.3v2.5h2.4V19z" fill="#fff"/></svg>
     </a>
   </div>
@@ -370,5 +395,58 @@ src="https://www.facebook.com/tr?id=1375770241134163&ev=PageView&noscript=1"
 </footer>
 
 <script src="js/script.js"></script>
+<script>
+// Hide hero headline/sub while the Christmas story slide (index 1) is showing
+(function(){
+  var hero = document.getElementById('hero');
+  var dots = document.querySelectorAll('#dotsWrap .dot');
+  if(!hero || dots.length < 2) return;
+  function sync(){ hero.classList.toggle('story-slide', dots[1].classList.contains('active')); }
+  var mo = new MutationObserver(sync);
+  dots.forEach(function(d){ mo.observe(d, {attributes:true, attributeFilter:['class']}); });
+  sync();
+})();
+
+// Carousel depth: report each slide the visitor actually sees (once per slide)
+(function(){
+  var dots = document.querySelectorAll('#dotsWrap .dot');
+  if(!dots.length) return;
+  var seen = {};
+  function report(){
+    dots.forEach(function(d, i){
+      if(d.classList.contains('active') && !seen[i]){
+        seen[i] = true;
+        try{ if(typeof gtag==='function') gtag('event','carousel_slide_view',{slide_index:i+1}); }catch(e){}
+      }
+    });
+  }
+  var mo = new MutationObserver(report);
+  dots.forEach(function(d){ mo.observe(d, {attributes:true, attributeFilter:['class']}); });
+  report();
+})();
+
+// Section views: report which page sections the visitor scrolled into (once each)
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  var sections = [
+    ['what','why_pickleball'],
+    ['sessions','sessions'],
+    ['coaching','private_coaching'],
+    ['signup','join_section']
+  ];
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        try{ if(typeof gtag==='function') gtag('event','section_view',{section_name:en.target.dataset.trackName}); }catch(e){}
+        io.unobserve(en.target);
+      }
+    });
+  }, {threshold:0.4});
+  sections.forEach(function(s){
+    var el = document.getElementById(s[0]);
+    if(el){ el.dataset.trackName = s[1]; io.observe(el); }
+  });
+})();
+</script>
 </body>
 </html>
